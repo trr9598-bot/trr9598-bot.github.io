@@ -4,43 +4,151 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>trr9598-bot | Web制作</title>
+  <meta name="description" content="LP/コーポレート/WordPressの制作・改修。素早く・丁寧に。">
   <style>
-    :root { --fg:#0f172a; --bg1:#f8fafc; --bg2:#e2e8f0; --acc:#3b82f6; }
-    * { box-sizing:border-box; }
-    body {
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color:var(--fg); background:linear-gradient(135deg,var(--bg1),var(--bg2));
-      min-height:100svh; display:grid; place-items:center; padding:24px;
+    :root{
+      --bg:#0b1220; --fg:#e6edf6; --muted:#9fb0c9; --card:#0f1a2f;
+      --acc:#60a5fa; --acc2:#34d399; --ring:rgba(96,165,250,.35);
     }
-    .card {
-      width:min(720px, 92vw); background:#fff; border-radius:20px;
-      box-shadow:0 10px 30px rgba(2,6,23,.12); padding:32px 28px;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      color:var(--fg); background:
+        radial-gradient(1200px 800px at 100% -20%, #143562 0%, transparent 60%),
+        radial-gradient(1000px 600px at -10% 110%, #0a4c44 0%, transparent 55%),
+        linear-gradient(180deg,#0a1120 0%, #0b1426 100%);
     }
-    h1 { margin:0 0 12px; font-size:clamp(28px,5vw,40px); letter-spacing:.02em; }
-    p.lead { margin:0 0 20px; font-size:clamp(16px,2.6vw,18px); line-height:1.7; color:#334155;}
-    .row { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
-    a.btn {
-      display:inline-block; padding:12px 18px; border-radius:12px; text-decoration:none;
-      background:var(--acc); color:#fff; font-weight:700;
+    .wrap{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.4px}
+    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--acc),var(--acc2))}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-size:14px}
+    nav a:hover{color:var(--fg)}
+    .hero{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;
+      padding:18px 0 34px;
     }
-    a.btn.secondary { background:#0ea5e9; }
-    footer { margin-top:20px; font-size:13px; color:#64748b; }
+    @media (max-width:880px){.hero{grid-template-columns:1fr}}
+    h1{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:4px 0 12px}
+    p.lead{color:var(--muted);font-size:clamp(15px,2.4vw,18px);line-height:1.8;margin:0 0 18px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--ring);
+      background:rgba(255,255,255,.03); border-radius:999px;font-size:12px;color:var(--muted)}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    .btn{
+      display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;
+      background:var(--acc);color:#051326;font-weight:800;box-shadow:0 0 0 0 var(--ring);
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 0 0 6px var(--ring)}
+    .btn.sec{background:#162742;color:var(--fg);border:1px solid #2a3e63}
+    .card{
+      background:linear-gradient(180deg,#0f1a2f, #0c1831); border:1px solid #213457;
+      border-radius:18px; padding:18px
+    }
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}}
+    h2{font-size:clamp(20px,3.4vw,26px);margin:6px 0 12px}
+    .kicker{color:var(--acc2);font-weight:800;font-size:12px;letter-spacing:.12em}
+    .svc{display:flex;gap:12px}
+    .ico{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#1b2a48,#253a66);
+         display:grid;place-items:center;font-weight:900;color:#7cc1ff}
+    ul.clean{margin:8px 0 0 0;padding:0;list-style:none;color:var(--muted);font-size:14px}
+    li+li{margin-top:6px}
+    .work{display:flex;flex-direction:column;gap:10px}
+    .work .thumb{aspect-ratio:16/9;border-radius:14px;background:
+      linear-gradient(135deg, rgba(96,165,250,.25), rgba(52,211,153,.2));
+      border:1px solid #274469}
+    footer{margin:26px 0 10px;color:#8ba0bd;font-size:12px;text-align:center}
+    .sep{height:1px;background:linear-gradient(90deg,transparent,#274469,transparent);margin:24px 0}
   </style>
 </head>
 <body>
-  <main class="card" role="main">
-    <h1>trr9598-bot のポートフォリオ</h1>
-    <p class="lead">
-      Hello GitHub!<br />
-      バスケ好きの航海士が、Web制作で副業→独立を目指してます。<br />
-      LP/コーポレートサイト/WordPressの制作・改修、お任せください。
-    </p>
-    <div class="row">
-      <a class="btn" href="mailto:trr9598@gmail.com">仕事の相談をする</a>
-      <a class="btn secondary" href="https://github.com/trr9598-bot" target="_blank" rel="noopener">GitHubを見る</a>
-    </div>
-    <footer>© <span id="y"></span> trr9598-bot</footer>
-  </main>
-  <script>document.getElementById("y").textContent = new Date().getFullYear()</script>
+  <div class="wrap">
+    <header>
+      <div class="logo"><span class="dot"></span> trr9598-bot</div>
+      <nav>
+        <a href="#services">サービス</a>
+        <a href="#works">制作例</a>
+        <a href="mailto:trr9598@gmail.com">お問い合わせ</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="chip">Web制作 / LP / コーポレート / WordPress</span>
+        <h1>“速く・丁寧に・伝わる” をつくる。</h1>
+        <p class="lead">
+          バスケ好きの航海士が、Web制作で副業→独立にチャレンジ中。<br/>
+          小さな改修から新規制作まで、要件整理から公開まで伴走します。
+        </p>
+        <div class="cta">
+          <a class="btn" href="mailto:trr9598@gmail.com">仕事の相談をする</a>
+          <a class="btn sec" href="https://github.com/trr9598-bot" target="_blank" rel="noopener">GitHubを見る</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="kicker">現在の提供内容</div>
+        <ul class="clean">
+          <li>・LP/コーポレートサイトの新規制作（1〜3ページ）</li>
+          <li>・既存サイトの改修（速度/デザイン/文言）</li>
+          <li>・WordPressテーマ調整/移行</li>
+          <li>・軽微な更新の定額対応（月次）</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <section id="services">
+      <h2>サービス</h2>
+      <div class="grid">
+        <div class="card svc">
+          <div class="ico">LP</div>
+          <div>
+            <strong>LP制作</strong>
+            <ul class="clean"><li>最短公開・CV設計・計測設置</li></ul>
+          </div>
+        </div>
+        <div class="card svc">
+          <div class="ico">WEB</div>
+          <div>
+            <strong>サイト改修</strong>
+            <ul class="clean"><li>デザイン/速度/SEOの小回り修正</li></ul>
+          </div>
+        </div>
+        <div class="card svc">
+          <div class="ico">WP</div>
+          <div>
+            <strong>WordPress</strong>
+            <ul class="clean"><li>テーマ調整・固定ページ構築</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <section id="works">
+      <h2>制作例（ダミー）</h2>
+      <div class="grid">
+        <div class="card work">
+          <div class="thumb"></div>
+          <div><strong>ランディングページ</strong><br><span class="muted">1ページ / 架空案件</span></div>
+        </div>
+        <div class="card work">
+          <div class="thumb"></div>
+          <div><strong>企業サイト</strong><br><span class="muted">2ページ / 架空案件</span></div>
+        </div>
+        <div class="card work">
+          <div class="thumb"></div>
+          <div><strong>WordPress移行</strong><br><span class="muted">テンプレ改修 / 架空案件</span></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>© <span id="y"></span> trr9598-bot — お問い合わせは <a href="mailto:trr9598@gmail.com" style="color:var(--acc)">こちら</a></footer>
+  </div>
+  <script>document.getElementById("y").textContent=new Date().getFullYear()</script>
 </body>
-</html
+</html>
