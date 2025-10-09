@@ -12,28 +12,19 @@
       color:var(--fg); background:linear-gradient(135deg,var(--bg1),var(--bg2));
       min-height:100svh; display:grid; place-items:center; padding:24px;
     }
-    .card {
-      width:min(920px, 94vw); background:#fff; border-radius:20px;
-      box-shadow:0 10px 30px rgba(2,6,23,.12); padding:32px 28px;
-    }
+    .card { width:min(920px, 94vw); background:#fff; border-radius:20px; box-shadow:0 10px 30px rgba(2,6,23,.12); padding:32px 28px; }
     h1 { margin:0 0 12px; font-size:clamp(28px,5vw,40px); }
     h2 { margin:24px 0 12px; border-bottom:2px solid #e2e8f0; padding-bottom:6px; }
     p.lead { font-size:16px; line-height:1.7; color:#334155; }
     ul.clean { list-style:none; padding:0; margin:0; }
     li { margin-bottom:6px; }
-    .badge {
-      display:inline-block; font-size:12px; padding:3px 8px; border-radius:6px;
-      background:#e2e8f0; color:#334155; margin-right:4px;
-    }
-    a.small {
-      display:inline-block; margin-right:6px; font-size:13px;
-      padding:6px 10px; background:var(--acc); color:#fff;
-      border-radius:6px; text-decoration:none;
-    }
+    .badge { display:inline-block; font-size:12px; padding:3px 8px; border-radius:6px; background:#e2e8f0; color:#334155; margin-right:4px; }
+    a.small { display:inline-block; margin-right:6px; font-size:13px; padding:6px 10px; background:var(--acc); color:#fff; border-radius:6px; text-decoration:none; }
     a.small:hover{box-shadow:0 0 0 4px rgba(96,165,250,.2)}
     .grid{display:grid;gap:20px}
     .grid.works{grid-template-columns:repeat(2,1fr)}
     @media(max-width:880px){.grid.works{grid-template-columns:1fr}}
+    .ver{margin:0 0 12px;color:#64748b;font-size:12px}
   </style>
 </head>
 <body>
@@ -67,6 +58,7 @@
 
     <section id="works">
       <h2>制作例</h2>
+      <p class="ver">v7 / 2件構成（ジム＋物流）</p>
       <div class="grid works">
 
         <!-- 01 ジムLP -->
@@ -82,7 +74,8 @@
             <li>ヒアリング〜公開まで7日 / CV設計・計測設置</li>
           </ul>
           <div class="actions">
-            <a class="small" href="works/lp-gym/" target="_blank">デモを見る</a>
+            <!-- 絶対パスでルートを明示 -->
+            <a class="small" href="/works/lp-gym/" target="_blank">デモを見る</a>
           </div>
         </div>
 
@@ -97,7 +90,8 @@
           </div>
           <ul class="clean"><li>会社紹介・お問い合わせ導線を最短構築</li></ul>
           <div class="actions">
-            <a class="small" href="works/corp-logi/" target="_blank">デモを見る</a>
+            <!-- 絶対パスでルートを明示 -->
+            <a class="small" href="/works/corp-logi/" target="_blank">デモを見る</a>
           </div>
         </div>
 
