@@ -7,11 +7,7 @@
   <style>
     :root { --fg:#0f172a; --bg1:#f8fafc; --bg2:#e2e8f0; --acc:#3b82f6; }
     * { box-sizing:border-box; }
-    body {
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color:var(--fg); background:linear-gradient(135deg,var(--bg1),var(--bg2));
-      min-height:100svh; display:grid; place-items:center; padding:24px;
-    }
+    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:var(--fg); background:linear-gradient(135deg,var(--bg1),var(--bg2)); min-height:100svh; display:grid; place-items:center; padding:24px; }
     .card { width:min(920px, 94vw); background:#fff; border-radius:20px; box-shadow:0 10px 30px rgba(2,6,23,.12); padding:32px 28px; }
     h1 { margin:0 0 12px; font-size:clamp(28px,5vw,40px); }
     h2 { margin:24px 0 12px; border-bottom:2px solid #e2e8f0; padding-bottom:6px; }
@@ -42,8 +38,7 @@
     <section id="about">
       <h2>自己紹介</h2>
       <p class="lead">
-        バスケ好きの航海士が、Web制作で副業→独立を目指してます。<br />
-        LP/コーポレートサイト/WordPressの制作・改修、お任せください。
+        航海士 × Web制作者。LP/コーポレート/WordPressの制作・改修を承ります。
       </p>
     </section>
 
@@ -58,41 +53,21 @@
 
     <section id="works">
       <h2>制作例</h2>
-      <p class="ver">v7 / 2件構成（ジム＋物流）</p>
+      <p class="ver">v20 / ジム＋物流</p>
       <div class="grid works">
 
-        <!-- 01 ジムLP -->
         <div class="card work">
-          <div class="thumb"></div>
           <div class="title">スポーツジム LP（架空）</div>
-          <div class="meta">
-            <span class="badge">LP</span>
-            <span class="badge">スピード納品</span>
-            <span class="badge">レスポンシブ</span>
-          </div>
-          <ul class="clean">
-            <li>ヒアリング〜公開まで7日 / CV設計・計測設置</li>
-          </ul>
-          <div class="actions">
-            <!-- 絶対パスでルートを明示 -->
-            <a class="small" href="/works/lp-gym-v2/" target="_blank">デモを見る</a>
-          </div>
+          <div class="meta"><span class="badge">LP</span><span class="badge">スピード納品</span><span class="badge">レスポンシブ</span></div>
+          <ul class="clean"><li>ヒアリング〜公開まで7日 / CV設計・計測設置</li></ul>
+          <div class="actions"><a class="small" href="works/gym-demo/" target="_blank">デモを見る</a></div>
         </div>
 
-        <!-- 02 物流コーポレート -->
         <div class="card work">
-          <div class="thumb"></div>
           <div class="title">物流会社 コーポレート（架空）</div>
-          <div class="meta">
-            <span class="badge">会社サイト</span>
-            <span class="badge">2ページ</span>
-            <span class="badge">SEO基礎</span>
-          </div>
+          <div class="meta"><span class="badge">会社サイト</span><span class="badge">2ページ</span><span class="badge">SEO基礎</span></div>
           <ul class="clean"><li>会社紹介・お問い合わせ導線を最短構築</li></ul>
-          <div class="actions">
-            <!-- 絶対パスでルートを明示 -->
-            <a class="small" href="/works/corp-logi/" target="_blank">デモを見る</a>
-          </div>
+          <div class="actions"><a class="small" href="works/corp-logi/" target="_blank">デモを見る</a></div>
         </div>
 
       </div>
