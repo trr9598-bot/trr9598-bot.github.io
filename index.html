@@ -34,6 +34,15 @@
 .btn.secondary{
   background:#0ea5e9;
 }
+/* ==== Step2: services grid & icons ==== */
+.services{margin-top:8px}
+.grid.services{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
+@media(max-width:880px){ .grid.services{grid-template-columns:1fr} }
+.service-card{background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:16px}
+.service-ico{width:36px; height:36px; display:inline-grid; place-items:center; border-radius:10px;
+  background:#eff6ff; color:#2563eb; margin-bottom:10px}
+.service-card h3{margin:6px 0 6px; font-size:16px}
+.service-card p{margin:0; color:#475569; line-height:1.7; font-size:14px}
   </style>
 </head>
 <body>
@@ -59,7 +68,43 @@
     <a class="btn secondary" href="#works">制作例を見る</a>
   </div>
 </section>
+<section id="services" class="services" aria-label="サービス">
+  <h2>サービス</h2>
+  <div class="grid services">
+    <!-- 1) LP制作 -->
+    <div class="service-card">
+      <div class="service-ico" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>
+        </svg>
+      </div>
+      <h3>LP制作</h3>
+      <p>スピーディーかつ成果を意識したデザインで、CVにつながる導線を設計します。</p>
+    </div>
 
+    <!-- 2) コーポレートサイト -->
+    <div class="service-card">
+      <div class="service-ico" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 21h18v-2H3v2zm2-4h14V3H5v14zm2-2V5h10v10H7z"/>
+        </svg>
+      </div>
+      <h3>コーポレートサイト</h3>
+      <p>信頼感を伝える情報設計と落ち着いたUIで、問い合わせにつながるサイトを構築。</p>
+    </div>
+
+    <!-- 3) WordPress導入・改修 -->
+    <div class="service-card">
+      <div class="service-ico" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8 4a8 8 0 11-16 0 8 8 0 0116 0z"/>
+        </svg>
+      </div>
+      <h3>WordPress導入・改修</h3>
+      <p>運用しやすさ重視。既存サイトのWP化やテーマ調整、表示速度の改善にも対応。</p>
+    </div>
+  </div>
+</section>
     <section id="works">
       <h2>制作例</h2>
       <p class="ver">v33 / ジム＋物流（2枚固定）</p>
