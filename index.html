@@ -19,48 +19,41 @@
     .badge { display:inline-block; font-size:12px; padding:3px 8px; border-radius:6px; background:#e2e8f0; color:#334155; margin-right:4px }
     a.small { display:inline-block; margin-right:6px; font-size:13px; padding:6px 10px; background:var(--acc); color:#fff; border-radius:6px; text-decoration:none }
     .ver{margin:0 0 12px; color:#64748b; font-size:12px}
-    /* ==== Step1: hero & buttons ==== */
-.hero{
-  background:linear-gradient(135deg,#e2e8f0,#f8fafc);
-  border:1px solid #e5e7eb; border-radius:16px; padding:28px; margin-top:10px;
-}
-.hero h1{margin:0 0 8px; font-size:clamp(26px,4.6vw,36px);}
-.hero p{margin:0 0 16px; color:#334155; line-height:1.8;}
-.row{display:flex; gap:10px; flex-wrap:wrap}
-.btn{
-  display:inline-block; padding:12px 16px; border-radius:12px; text-decoration:none;
-  background:var(--acc); color:#fff; font-weight:700;
-}
-.btn.secondary{
-  background:#0ea5e9;
-}
-/* ==== Step2: services grid & icons ==== */
-.services{margin-top:8px}
-.grid.services{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
-@media(max-width:880px){ .grid.services{grid-template-columns:1fr} }
-.service-card{background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:16px}
-.service-ico{width:36px; height:36px; display:inline-grid; place-items:center; border-radius:10px;
-  background:#eff6ff; color:#2563eb; margin-bottom:10px}
-.service-card h3{margin:6px 0 6px; font-size:16px}
-.service-card p{margin:0; color:#475569; line-height:1.7; font-size:14px}
-/* services: 3カラム＆カード体裁 */
-.grid.services{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
-@media(max-width:880px){ .grid.services{grid-template-columns:1fr} }
-#services .card{background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:16px}
-#services h3{margin:6px 0 8px; font-size:16px}
-#services p{margin:0; color:#475569; line-height:1.7; font-size:14px}
-/* works: カードの高さ揃え＆ボタン下寄せ */
-#works .grid.works{display:grid; gap:20px; grid-template-columns:repeat(2,1fr)}
-@media(max-width:880px){ #works .grid.works{grid-template-columns:1fr} }
 
-#works .work{
-  display:flex; flex-direction:column;
-  background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:16px;
-}
-#works .work .title{font-weight:700; margin:0 0 6px}
-#works .work .meta{margin:0 0 8px}
-#works .work ul{margin:0 0 12px; padding-left:18px}
-#works .work .actions{margin-top:auto} /* ← これでボタンが下に揃う */
+    /* ==== Hero ==== */
+    .hero{
+      background:linear-gradient(135deg,#e2e8f0,#f8fafc);
+      border:1px solid #e5e7eb; border-radius:16px; padding:28px; margin-top:10px;
+    }
+    .hero h1{margin:0 0 8px; font-size:clamp(26px,4.6vw,36px);}
+    .hero p{margin:0 0 16px; color:#334155; line-height:1.8;}
+    .row{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      display:inline-block; padding:12px 16px; border-radius:12px; text-decoration:none;
+      background:var(--acc); color:#fff; font-weight:700;
+    }
+    .btn.secondary{ background:#0ea5e9; }
+
+    /* ==== Services ==== */
+    .services{margin-top:8px}
+    .grid.services{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
+    @media(max-width:880px){ .grid.services{grid-template-columns:1fr} }
+    .service-card{background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:16px}
+    .service-ico{width:36px; height:36px; display:inline-grid; place-items:center; border-radius:10px; background:#eff6ff; color:#2563eb; margin-bottom:10px}
+    .service-card h3{margin:6px 0 6px; font-size:16px}
+    .service-card p{margin:0; color:#475569; line-height:1.7; font-size:14px}
+
+    /* ==== Works ==== */
+    #works .grid.works{display:grid; gap:20px; grid-template-columns:repeat(2,1fr)}
+    @media(max-width:880px){ #works .grid.works{grid-template-columns:1fr} }
+    #works .work{
+      display:flex; flex-direction:column;
+      background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:16px;
+    }
+    #works .work .title{font-weight:700; margin:0 0 6px}
+    #works .work .meta{margin:0 0 8px}
+    #works .work ul{margin:0 0 12px; padding-left:18px}
+    #works .work .actions{margin-top:auto}
   </style>
 </head>
 <body>
@@ -75,108 +68,60 @@
       </nav>
     </header>
 
-   <section class="hero" id="about" aria-label="自己紹介">
-  <h1>航海士 × Web制作者</h1>
-  <p>
-    BtoC/BtoBのLP・会社サイト・WordPressの制作/改修を、<br />
-    「わかりやすい設計」と「丁寧な進行」でお手伝いします。
-  </p>
-  <div class="row">
-    <a class="btn" href="#contact">まずは相談してみる</a>
-    <a class="btn secondary" href="#works">制作例を見る</a>
-  </div>
-</section>
-<section id="services" class="services" aria-label="サービス">
-  <h2>サービス</h2>
-  <div class="grid services">
-    <!-- 1) LP制作 -->
-    <div class="service-card">
-      <div class="service-ico" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>
-        </svg>
+    <section class="hero" id="about" aria-label="自己紹介">
+      <h1>航海士 × Web制作者</h1>
+      <p>
+        BtoC/BtoBのLP・会社サイト・WordPressの制作/改修を、<br />
+        「わかりやすい設計」と「丁寧な進行」でお手伝いします。
+      </p>
+      <div class="row">
+        <a class="btn" href="#contact">まずは相談してみる</a>
+        <a class="btn secondary" href="#works">制作例を見る</a>
       </div>
-      <h3>LP制作</h3>
-      <p>スピーディーかつ成果を意識したデザインで、CVにつながる導線を設計します。</p>
-    </div>
+    </section>
 
-    <!-- 2) コーポレートサイト -->
-    <div class="service-card">
-      <div class="service-ico" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M3 21h18v-2H3v2zm2-4h14V3H5v14zm2-2V5h10v10H7z"/>
-        </svg>
+    <section id="services" class="services" aria-label="サービス">
+      <h2>サービス</h2>
+      <div class="grid services">
+        <div class="service-card">
+          <div class="service-ico"><svg width="20" height="20" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+          <h3>LP制作</h3>
+          <p>スピーディーかつ成果を意識したデザインで、CVにつながる導線を設計します。</p>
+        </div>
+        <div class="service-card">
+          <div class="service-ico"><svg width="20" height="20" fill="currentColor"><path d="M3 21h18v-2H3v2zm2-4h14V3H5v14zm2-2V5h10v10H7z"/></svg></div>
+          <h3>コーポレートサイト</h3>
+          <p>信頼感を伝える情報設計と落ち着いたUIで、問い合わせにつながるサイトを構築。</p>
+        </div>
+        <div class="service-card">
+          <div class="service-ico"><svg width="20" height="20" fill="currentColor"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8 4a8 8 0 11-16 0 8 8 0 0116 0z"/></svg></div>
+          <h3>WordPress導入・改修</h3>
+          <p>運用しやすさ重視。既存サイトのWP化やテーマ調整、表示速度の改善にも対応。</p>
+        </div>
       </div>
-      <h3>コーポレートサイト</h3>
-      <p>信頼感を伝える情報設計と落ち着いたUIで、問い合わせにつながるサイトを構築。</p>
-    </div>
+    </section>
 
-    <!-- 3) WordPress導入・改修 -->
-    <div class="service-card">
-      <div class="service-ico" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8 4a8 8 0 11-16 0 8 8 0 0116 0z"/>
-        </svg>
-      </div>
-      <h3>WordPress導入・改修</h3>
-      <p>運用しやすさ重視。既存サイトのWP化やテーマ調整、表示速度の改善にも対応。</p>
-    </div>
-  </div>
-</section>
-<section id="services">
-  <h2>サービス</h2>
-  <div class="grid services">
-    <div class="card">
-      <h3>LP制作</h3>
-      <p>スピーディーかつ成果を意識したデザインで、CVにつながる導線を設計します。</p>
-    </div>
-    <div class="card">
-      <h3>コーポレートサイト</h3>
-      <p>信頼感を伝える構成とデザインで、問い合わせにつながるサイトを構築します。</p>
-    </div>
-    <div class="card">
-      <h3>WordPress導入・改修</h3>
-      <p>運用しやすさ重視。既存サイトのWP化やテーマ調整、表示速度の改善にも対応します。</p>
-    </div>
-  </div>
-</section>
     <section id="works">
       <h2>制作例</h2>
       <p class="ver">v33 / ジム＋物流（2枚固定）</p>
       <div class="grid works">
-
-        <!-- 01 ジム -->
         <div class="work">
           <div class="title">スポーツジム LP（架空）</div>
           <div class="meta">
-            <span class="badge">LP</span>
-            <span class="badge">スピード納品</span>
-            <span class="badge">レスポンシブ</span>
+            <span class="badge">LP</span><span class="badge">スピード納品</span><span class="badge">レスポンシブ</span>
           </div>
-          <ul>
-            <li>ヒアリング〜公開まで7日 / CV設計・計測設置</li>
-          </ul>
-          <div class="actions">
-            <a class="small" href="works/gym-demo/" target="_blank" rel="noopener">デモを見る</a>
-          </div>
+          <ul><li>ヒアリング〜公開まで7日 / CV設計・計測設置</li></ul>
+          <div class="actions"><a class="small" href="works/gym-demo/" target="_blank">デモを見る</a></div>
         </div>
 
-        <!-- 02 物流 -->
         <div class="work">
           <div class="title">物流会社 コーポレート（架空）</div>
           <div class="meta">
-            <span class="badge">会社サイト</span>
-            <span class="badge">2ページ</span>
-            <span class="badge">SEO基礎</span>
+            <span class="badge">会社サイト</span><span class="badge">2ページ</span><span class="badge">SEO基礎</span>
           </div>
-          <ul>
-            <li>会社紹介・お問い合わせ導線を最短構築</li>
-          </ul>
-          <div class="actions">
-            <a class="small" href="works/corp-logi/" target="_blank" rel="noopener">デモを見る</a>
-          </div>
+          <ul><li>会社紹介・お問い合わせ導線を最短構築</li></ul>
+          <div class="actions"><a class="small" href="works/corp-logi/" target="_blank">デモを見る</a></div>
         </div>
-
       </div>
     </section>
 
@@ -184,7 +129,7 @@
       <h2>お問い合わせ</h2>
       <div class="row">
         <a class="small" href="mailto:trr9598@gmail.com">仕事の相談をする</a>
-        <a class="small" href="https://github.com/trr9598-bot" target="_blank" rel="noopener">GitHubを見る</a>
+        <a class="small" href="https://github.com/trr9598-bot" target="_blank">GitHubを見る</a>
       </div>
     </section>
 
