@@ -19,6 +19,21 @@
     .badge { display:inline-block; font-size:12px; padding:3px 8px; border-radius:6px; background:#e2e8f0; color:#334155; margin-right:4px }
     a.small { display:inline-block; margin-right:6px; font-size:13px; padding:6px 10px; background:var(--acc); color:#fff; border-radius:6px; text-decoration:none }
     .ver{margin:0 0 12px; color:#64748b; font-size:12px}
+    /* ==== Step1: hero & buttons ==== */
+.hero{
+  background:linear-gradient(135deg,#e2e8f0,#f8fafc);
+  border:1px solid #e5e7eb; border-radius:16px; padding:28px; margin-top:10px;
+}
+.hero h1{margin:0 0 8px; font-size:clamp(26px,4.6vw,36px);}
+.hero p{margin:0 0 16px; color:#334155; line-height:1.8;}
+.row{display:flex; gap:10px; flex-wrap:wrap}
+.btn{
+  display:inline-block; padding:12px 16px; border-radius:12px; text-decoration:none;
+  background:var(--acc); color:#fff; font-weight:700;
+}
+.btn.secondary{
+  background:#0ea5e9;
+}
   </style>
 </head>
 <body>
@@ -33,19 +48,17 @@
       </nav>
     </header>
 
-    <section id="about">
-      <h2>自己紹介</h2>
-      <p class="lead">航海士 × Web制作者。LP/コーポレート/WordPressの制作・改修を承ります。</p>
-    </section>
-
-    <section id="services">
-      <h2>サービス</h2>
-      <ul>
-        <li>LP制作：スピーディーかつ成果を意識したデザイン</li>
-        <li>コーポレートサイト：信頼感を伝える構成とデザイン</li>
-        <li>WordPress導入・改修：運用しやすさ重視</li>
-      </ul>
-    </section>
+   <section class="hero" id="about" aria-label="自己紹介">
+  <h1>航海士 × Web制作者</h1>
+  <p>
+    BtoC/BtoBのLP・会社サイト・WordPressの制作/改修を、<br />
+    「わかりやすい設計」と「丁寧な進行」でお手伝いします。
+  </p>
+  <div class="row">
+    <a class="btn" href="#contact">まずは相談してみる</a>
+    <a class="btn secondary" href="#works">制作例を見る</a>
+  </div>
+</section>
 
     <section id="works">
       <h2>制作例</h2>
