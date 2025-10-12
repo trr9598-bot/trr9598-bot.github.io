@@ -54,6 +54,16 @@
     #works .work .meta{margin:0 0 8px}
     #works .work ul{margin:0 0 12px; padding-left:18px}
     #works .work .actions{margin-top:auto}
+    /* works: サムネ付き・高さ揃え・ホバー */
+#works .work{display:flex;flex-direction:column}
+#works .work .thumb{
+  aspect-ratio:16/9; border-radius:10px; margin-bottom:12px;
+  background:linear-gradient(135deg,#dbeafe,#bfdbfe);
+  border:1px solid #e5e7eb;
+}
+#works .work .thumb.gym{background:linear-gradient(135deg,#dcfce7,#bbf7d0)}  /* ジム */
+#works .work .thumb.logi{background:linear-gradient(135deg,#fee2e2,#fecaca)} /* 物流 */
+#works .work:hover{box-shadow:0 8px 24px rgba(2,6,23,.08); transform:translateY(-2px); transition:.2s}
   </style>
 </head>
 <body>
@@ -102,28 +112,40 @@
     </section>
 
     <section id="works">
-      <h2>制作例</h2>
-      <p class="ver">v33 / ジム＋物流（2枚固定）</p>
-      <div class="grid works">
-        <div class="work">
-          <div class="title">スポーツジム LP（架空）</div>
-          <div class="meta">
-            <span class="badge">LP</span><span class="badge">スピード納品</span><span class="badge">レスポンシブ</span>
-          </div>
-          <ul><li>ヒアリング〜公開まで7日 / CV設計・計測設置</li></ul>
-          <div class="actions"><a class="small" href="works/gym-demo/" target="_blank">デモを見る</a></div>
-        </div>
-
-        <div class="work">
-          <div class="title">物流会社 コーポレート（架空）</div>
-          <div class="meta">
-            <span class="badge">会社サイト</span><span class="badge">2ページ</span><span class="badge">SEO基礎</span>
-          </div>
-          <ul><li>会社紹介・お問い合わせ導線を最短構築</li></ul>
-          <div class="actions"><a class="small" href="works/corp-logi/" target="_blank">デモを見る</a></div>
-        </div>
+  <h2>制作例</h2>
+  <p class="ver">v35 / サムネ付き・高さ揃え</p>
+  <div class="grid works">
+    <!-- 01 ジム -->
+    <div class="work">
+      <div class="thumb gym" role="img" aria-label="スポーツジムLPのサムネイル"></div>
+      <div class="title">スポーツジム LP（架空）</div>
+      <div class="meta">
+        <span class="badge">LP</span>
+        <span class="badge">スピード納品</span>
+        <span class="badge">レスポンシブ</span>
       </div>
-    </section>
+      <ul><li>ヒアリング〜公開まで7日 / CV設計・計測設置</li></ul>
+      <div class="actions">
+        <a class="small" href="works/gym-demo/" target="_blank" rel="noopener">デモを見る</a>
+      </div>
+    </div>
+
+    <!-- 02 物流 -->
+    <div class="work">
+      <div class="thumb logi" role="img" aria-label="物流コーポレートのサムネイル"></div>
+      <div class="title">物流会社 コーポレート（架空）</div>
+      <div class="meta">
+        <span class="badge">会社サイト</span>
+        <span class="badge">2ページ</span>
+        <span class="badge">SEO基礎</span>
+      </div>
+      <ul><li>会社紹介・お問い合わせ導線を最短構築</li></ul>
+      <div class="actions">
+        <a class="small" href="works/corp-logi/" target="_blank" rel="noopener">デモを見る</a>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="contact">
       <h2>お問い合わせ</h2>
