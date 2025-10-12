@@ -43,6 +43,24 @@
   background:#eff6ff; color:#2563eb; margin-bottom:10px}
 .service-card h3{margin:6px 0 6px; font-size:16px}
 .service-card p{margin:0; color:#475569; line-height:1.7; font-size:14px}
+/* services: 3カラム＆カード体裁 */
+.grid.services{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
+@media(max-width:880px){ .grid.services{grid-template-columns:1fr} }
+#services .card{background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:16px}
+#services h3{margin:6px 0 8px; font-size:16px}
+#services p{margin:0; color:#475569; line-height:1.7; font-size:14px}
+/* works: カードの高さ揃え＆ボタン下寄せ */
+#works .grid.works{display:grid; gap:20px; grid-template-columns:repeat(2,1fr)}
+@media(max-width:880px){ #works .grid.works{grid-template-columns:1fr} }
+
+#works .work{
+  display:flex; flex-direction:column;
+  background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:16px;
+}
+#works .work .title{font-weight:700; margin:0 0 6px}
+#works .work .meta{margin:0 0 8px}
+#works .work ul{margin:0 0 12px; padding-left:18px}
+#works .work .actions{margin-top:auto} /* ← これでボタンが下に揃う */
   </style>
 </head>
 <body>
@@ -102,6 +120,23 @@
       </div>
       <h3>WordPress導入・改修</h3>
       <p>運用しやすさ重視。既存サイトのWP化やテーマ調整、表示速度の改善にも対応。</p>
+    </div>
+  </div>
+</section>
+<section id="services">
+  <h2>サービス</h2>
+  <div class="grid services">
+    <div class="card">
+      <h3>LP制作</h3>
+      <p>スピーディーかつ成果を意識したデザインで、CVにつながる導線を設計します。</p>
+    </div>
+    <div class="card">
+      <h3>コーポレートサイト</h3>
+      <p>信頼感を伝える構成とデザインで、問い合わせにつながるサイトを構築します。</p>
+    </div>
+    <div class="card">
+      <h3>WordPress導入・改修</h3>
+      <p>運用しやすさ重視。既存サイトのWP化やテーマ調整、表示速度の改善にも対応します。</p>
     </div>
   </div>
 </section>
