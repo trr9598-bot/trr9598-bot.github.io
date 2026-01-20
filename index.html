@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>trr9598-bot | Web制作</title>
 
-  <!-- フォント（見出しが締まる） -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* base */
       --bg0:#071a2c;
       --bg1:#0a2a4a;
       --panel:#ffffff;
@@ -20,120 +18,65 @@
       --muted:#4b5563;
       --line:rgba(15,23,42,.10);
 
-      /* blue */
       --b50:#eff6ff;
       --b100:#dbeafe;
-      --b200:#bfdbfe;
       --b600:#2563eb;
       --b700:#1d4ed8;
       --ring:rgba(37,99,235,.22);
 
-      /* shadow (薄く・広く) */
-      --shadow1: 0 16px 50px rgba(2,6,23,.12);
-      --shadow2: 0 24px 70px rgba(2,6,23,.16);
+      --shadow1:0 16px 50px rgba(2,6,23,.12);
+      --shadow2:0 24px 70px rgba(2,6,23,.16);
     }
 
     *{ box-sizing:border-box; }
 
     body{
       margin:0;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family:"Inter",system-ui,-apple-system,sans-serif;
       color:var(--text);
       background:
         radial-gradient(900px 540px at 15% -10%, rgba(59,130,246,.25), transparent 60%),
         radial-gradient(900px 540px at 95% 10%, rgba(191,219,254,.22), transparent 55%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
+        linear-gradient(180deg,var(--bg0),var(--bg1));
       min-height:100svh;
       display:grid;
       place-items:center;
       padding:36px 18px;
     }
 
-    .wrap{
-      width:min(980px, 100%);
-    }
-
-    .topbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      margin:0 0 14px;
-      color:#e5edff;
-      opacity:.95;
-      font-size:13px;
-    }
-
-    .topbar .pill{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding:8px 10px;
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:999px;
-      background:rgba(255,255,255,.08);
-      backdrop-filter: blur(6px);
-    }
+    .wrap{ width:min(980px,100%); }
 
     .card{
       background:rgba(255,255,255,.96);
-      border:1px solid rgba(255,255,255,.55);
+      border:1px solid rgba(255,255,255,.5);
       border-radius:22px;
       box-shadow:var(--shadow2);
       padding:34px 30px;
-      overflow:hidden;
-      position:relative;
-    }
-
-    /* うっすら装飾（やりすぎない） */
-    .card:before{
-      content:"";
-      position:absolute;
-      inset:-120px -220px auto auto;
-      width:420px; height:420px;
-      background:radial-gradient(circle, rgba(37,99,235,.18), transparent 60%);
-      transform: rotate(12deg);
-      pointer-events:none;
     }
 
     header{
       display:flex;
       justify-content:space-between;
       align-items:flex-end;
-      flex-wrap:wrap;
       gap:12px;
-      padding-bottom:16px;
       border-bottom:1px solid var(--line);
+      padding-bottom:16px;
       margin-bottom:18px;
-      position:relative;
-      z-index:1;
-    }
-
-    .brand{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
+      flex-wrap:wrap;
     }
 
     h1{
       margin:0;
-      font-size:clamp(26px, 3.8vw, 36px);
-      letter-spacing:-.02em;
-      line-height:1.1;
+      font-size:clamp(26px,4vw,36px);
       font-weight:800;
+      letter-spacing:-.02em;
     }
 
     .sub{
-      margin:0;
+      margin:6px 0 0;
       color:var(--muted);
       font-size:13px;
       font-weight:600;
-    }
-
-    nav{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
     }
 
     nav a{
@@ -149,27 +92,23 @@
       box-shadow:0 0 0 4px rgba(37,99,235,.08);
     }
 
-    section{ margin-top:28px; }
+    section{ margin-top:32px; }
     section:first-of-type{ margin-top:0; }
 
     h2{
       margin:0 0 12px;
       font-size:18px;
       font-weight:800;
-      letter-spacing:-.01em;
       display:flex;
       align-items:center;
       gap:10px;
     }
-
-    /* 見出し左の青い線（プロっぽく見える） */
     h2:before{
       content:"";
       width:10px;
       height:10px;
       border-radius:3px;
-      background:linear-gradient(135deg, var(--b700), var(--b600));
-      box-shadow:0 10px 22px rgba(37,99,235,.25);
+      background:linear-gradient(135deg,var(--b700),var(--b600));
     }
 
     .lead{
@@ -177,16 +116,6 @@
       color:var(--muted);
       line-height:1.9;
       font-size:15px;
-    }
-
-    .hero{
-      background:linear-gradient(135deg, #ffffff, var(--b50));
-      border:1px solid rgba(37,99,235,.14);
-      border-radius:18px;
-      padding:18px 18px;
-      box-shadow:var(--shadow1);
-      position:relative;
-      z-index:1;
     }
 
     .row{
@@ -200,21 +129,14 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:8px;
       padding:12px 14px;
       border-radius:12px;
-      text-decoration:none;
       font-weight:800;
       font-size:14px;
+      text-decoration:none;
       color:#fff;
-      background:linear-gradient(135deg, var(--b700), var(--b600));
+      background:linear-gradient(135deg,var(--b700),var(--b600));
       box-shadow:0 14px 30px rgba(37,99,235,.22);
-      transform: translateZ(0);
-      transition:transform .15s ease, box-shadow .15s ease;
-    }
-    .btn:hover{
-      transform:translateY(-1px);
-      box-shadow:0 18px 38px rgba(37,99,235,.26);
     }
     .btn.secondary{
       background:#fff;
@@ -222,9 +144,13 @@
       border:1px solid rgba(37,99,235,.18);
       box-shadow:none;
     }
-    .btn.secondary:hover{
-      transform:none;
-      box-shadow:0 0 0 4px var(--ring);
+
+    .hero{
+      background:linear-gradient(135deg,#fff,var(--b50));
+      border:1px solid rgba(37,99,235,.15);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:var(--shadow1);
     }
 
     .grid{
@@ -233,9 +159,9 @@
     }
 
     .grid.services{
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
     }
-    @media(max-width:920px){
+    @media(max-width:900px){
       .grid.services{ grid-template-columns:1fr; }
     }
 
@@ -243,99 +169,30 @@
       background:#fff;
       border:1px solid var(--line);
       border-radius:16px;
-      padding:16px;
+      padding:18px;
       box-shadow:0 10px 26px rgba(2,6,23,.06);
     }
-    .service .ico{
-      width:38px; height:38px;
-      border-radius:12px;
-      display:grid;
-      place-items:center;
-      background:var(--b50);
-      border:1px solid var(--b100);
-      color:var(--b700);
-      margin-bottom:10px;
-    }
+
     .service h3{
       margin:0 0 6px;
       font-size:15px;
       font-weight:800;
-      letter-spacing:-.01em;
-    }
-    .service p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.8;
-      font-size:14px;
     }
 
-    .grid.works{
-      grid-template-columns:repeat(2, 1fr);
-    }
-    @media(max-width:920px){
-      .grid.works{ grid-template-columns:1fr; }
-    }
-
-    .work{
-      display:flex;
-      flex-direction:column;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:16px;
-      box-shadow:0 12px 34px rgba(2,6,23,.08);
-      transition:transform .15s ease, box-shadow .15s ease;
-      min-height:220px;
-    }
-    .work:hover{
-      transform:translateY(-2px);
-      box-shadow:0 18px 46px rgba(2,6,23,.12);
-    }
-
-    .title{
-      margin:0 0 8px;
-      font-weight:900;
-      letter-spacing:-.01em;
-    }
-
-    .meta{ margin:0 0 10px; display:flex; flex-wrap:wrap; gap:6px; }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      padding:5px 10px;
-      border-radius:999px;
-      background:var(--b50);
-      border:1px solid var(--b100);
+    .price{
+      font-size:20px;
+      font-weight:800;
       color:var(--b700);
-      font-size:12px;
-      font-weight:700;
+      margin-bottom:10px;
     }
 
-    .work ul{
-      margin:0 0 12px;
+    .service ul{
+      margin:0;
       padding-left:18px;
       color:var(--muted);
       line-height:1.8;
       font-size:14px;
     }
-
-    .actions{ margin-top:auto; display:flex; gap:10px; flex-wrap:wrap; }
-
-    .small{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px 12px;
-      border-radius:12px;
-      text-decoration:none;
-      font-weight:800;
-      font-size:13px;
-      background:linear-gradient(135deg, var(--b700), var(--b600));
-      color:#fff;
-      box-shadow:0 12px 26px rgba(37,99,235,.20);
-    }
-    .small:hover{ box-shadow:0 0 0 4px var(--ring); }
 
     footer{
       margin-top:22px;
@@ -344,30 +201,23 @@
       color:#94a3b8;
       font-size:12px;
       text-align:center;
-      position:relative;
-      z-index:1;
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
+    <main class="card">
 
-    <div class="topbar">
-      <div class="pill">🚢 航海士 / Web制作</div>
-      <div class="pill">対応：LP / 会社サイト / WordPress</div>
-    </div>
-
-    <main class="card" role="main">
       <header>
-        <div class="brand">
+        <div>
           <h1>trr9598-bot</h1>
-          <p class="sub">信頼感あるWeb制作（LP・コーポレート・WordPress）</p>
+          <p class="sub">Web制作 / LP・コーポレート・WordPress</p>
         </div>
-        <nav aria-label="ページ内リンク">
+        <nav>
           <a href="#about">自己紹介</a>
           <a href="#services">サービス</a>
-          <a href="#works">制作例</a>
+          <a href="#price">料金</a>
           <a href="#contact">お問い合わせ</a>
         </nav>
       </header>
@@ -376,82 +226,66 @@
         <h2>自己紹介</h2>
         <p class="lead">
           航海士 × Web制作者。<br>
-          “わかりやすい構成”と“丁寧な進行”で、問い合わせにつながるサイトを作ります。
+          小規模事業者・個人向けに「分かりやすく・頼みやすい」Web制作を行っています。
         </p>
         <div class="row">
           <a class="btn" href="#contact">まずは相談する</a>
-          <a class="btn secondary" href="#works">制作例を見る</a>
+          <a class="btn secondary" href="#price">料金を見る</a>
         </div>
       </section>
 
       <section id="services">
         <h2>サービス</h2>
-        <div class="grid services">
-          <div class="service">
-            <div class="ico">⚡</div>
-            <h3>LP制作</h3>
-            <p>集客導線を意識した1ページ構成。見た目だけでなく“成果”を狙う設計に。</p>
-          </div>
-          <div class="service">
-            <div class="ico">🏢</div>
-            <h3>コーポレートサイト</h3>
-            <p>信頼感のある情報設計とUIで、問い合わせにつながる会社サイトを構築。</p>
-          </div>
-          <div class="service">
-            <div class="ico">🛠️</div>
-            <h3>WordPress導入・改修</h3>
-            <p>更新しやすい構成に整備。既存サイトのWP化や速度改善も対応。</p>
-          </div>
-        </div>
+        <p class="lead">目的に合わせて、必要なものだけをシンプルに制作します。</p>
       </section>
 
-      <section id="works">
-        <h2>制作例</h2>
-        <div class="grid works">
-          <div class="work">
-            <p class="title">スポーツジム LP（架空）</p>
-            <div class="meta">
-              <span class="badge">LP</span>
-              <span class="badge">レスポンシブ</span>
-              <span class="badge">CV導線</span>
-            </div>
+      <section id="price">
+        <h2>料金の目安</h2>
+
+        <div class="grid services">
+          <div class="service">
+            <h3>ライトプラン</h3>
+            <p class="price">¥5,000</p>
             <ul>
-              <li>ファーストビュー→ベネフィット→CTAの流れ</li>
-              <li>問い合わせにつながる導線をシンプルに設計</li>
+              <li>既存ページの軽微な修正</li>
+              <li>テキスト差し替え</li>
+              <li>色・余白調整</li>
             </ul>
-            <div class="actions">
-              <a class="small" href="works/gym-demo/" target="_blank" rel="noopener">デモを見る</a>
-            </div>
           </div>
 
-          <div class="work">
-            <p class="title">物流会社 コーポレート（架空）</p>
-            <div class="meta">
-              <span class="badge">会社サイト</span>
-              <span class="badge">SEO基礎</span>
-              <span class="badge">導線整理</span>
-            </div>
+          <div class="service">
+            <h3>スタンダードプラン</h3>
+            <p class="price">¥25,000</p>
             <ul>
-              <li>サービス/強み/問い合わせの情報設計</li>
-              <li>信頼感を作る“見せ方”を整備</li>
+              <li>1ページLP制作</li>
+              <li>スマホ対応</li>
+              <li>構成・文言相談</li>
             </ul>
-            <div class="actions">
-              <a class="small" href="works/corp-logi/" target="_blank" rel="noopener">デモを見る</a>
-            </div>
+          </div>
+
+          <div class="service">
+            <h3>プレミアムプラン</h3>
+            <p class="price">¥50,000</p>
+            <ul>
+              <li>複数ページ構成</li>
+              <li>問い合わせ導線設計</li>
+              <li>公開までサポート</li>
+            </ul>
           </div>
         </div>
       </section>
 
       <section id="contact" class="hero">
         <h2>お問い合わせ</h2>
-        <p class="lead">相談だけでもOK。内容を見て、最短でできる提案を返す。</p>
+        <p class="lead">内容が固まっていなくても大丈夫です。</p>
         <div class="row">
-          <a class="btn" href="mailto:trr9598@gmail.com">仕事の相談をする</a>
-          <a class="btn secondary" href="https://github.com/trr9598-bot" target="_blank" rel="noopener">GitHubを見る</a>
+          <a class="btn" href="mailto:trr9598@gmail.com">メールで相談する</a>
         </div>
       </section>
 
-      <footer>© <span id="y"></span> trr9598-bot</footer>
+      <footer>
+        © <span id="y"></span> trr9598-bot
+      </footer>
     </main>
   </div>
 
