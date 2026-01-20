@@ -13,6 +13,7 @@
     :root{
       --bg0:#071a2c;
       --bg1:#0a2a4a;
+
       --panel:#ffffff;
       --text:#0b1324;
       --muted:#4b5563;
@@ -86,13 +87,14 @@
       font-size:13px;
       padding:8px 10px;
       border-radius:10px;
+      display:inline-block;
     }
     nav a:hover{
       background:var(--b50);
       box-shadow:0 0 0 4px rgba(37,99,235,.08);
     }
 
-    section{ margin-top:32px; }
+    section{ margin-top:34px; }
     section:first-of-type{ margin-top:0; }
 
     h2{
@@ -144,6 +146,9 @@
       border:1px solid rgba(37,99,235,.18);
       box-shadow:none;
     }
+    .btn.secondary:hover{
+      box-shadow:0 0 0 4px var(--ring);
+    }
 
     .hero{
       background:linear-gradient(135deg,#fff,var(--b50));
@@ -158,14 +163,13 @@
       gap:14px;
     }
 
-    .grid.services{
-      grid-template-columns:repeat(3,1fr);
-    }
+    /* サービス/料金：3列 */
+    .grid.cols3{ grid-template-columns:repeat(3,1fr); }
     @media(max-width:900px){
-      .grid.services{ grid-template-columns:1fr; }
+      .grid.cols3{ grid-template-columns:1fr; }
     }
 
-    .service{
+    .panel{
       background:#fff;
       border:1px solid var(--line);
       border-radius:16px;
@@ -173,26 +177,72 @@
       box-shadow:0 10px 26px rgba(2,6,23,.06);
     }
 
-    .service h3{
+    .panel h3{
       margin:0 0 6px;
       font-size:15px;
       font-weight:800;
+    }
+
+    .panel p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:14px;
     }
 
     .price{
       font-size:20px;
       font-weight:800;
       color:var(--b700);
-      margin-bottom:10px;
+      margin:10px 0 10px;
     }
 
-    .service ul{
+    .panel ul{
       margin:0;
       padding-left:18px;
       color:var(--muted);
       line-height:1.8;
       font-size:14px;
     }
+
+    /* 制作例：2列 */
+    .grid.cols2{ grid-template-columns:repeat(2,1fr); }
+    @media(max-width:900px){
+      .grid.cols2{ grid-template-columns:1fr; }
+    }
+
+    .work{
+      display:flex;
+      flex-direction:column;
+      min-height:220px;
+    }
+    .work .actions{ margin-top:auto; }
+
+    .badge{
+      display:inline-block;
+      font-size:12px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:var(--b50);
+      color:var(--b700);
+      border:1px solid var(--b100);
+      margin-right:6px;
+      font-weight:700;
+    }
+
+    .small{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:13px;
+      padding:9px 12px;
+      border-radius:12px;
+      text-decoration:none;
+      background:var(--b700);
+      color:#fff;
+      font-weight:800;
+    }
+    .small:hover{ box-shadow:0 0 0 4px var(--ring); }
 
     footer{
       margin-top:22px;
@@ -218,6 +268,7 @@
           <a href="#about">自己紹介</a>
           <a href="#services">サービス</a>
           <a href="#price">料金</a>
+          <a href="#works">制作例</a>
           <a href="#contact">お問い合わせ</a>
         </nav>
       </header>
@@ -226,36 +277,52 @@
         <h2>自己紹介</h2>
         <p class="lead">
           航海士 × Web制作者。<br>
-          小規模事業者・個人向けに「分かりやすく・頼みやすい」Web制作を行っています。
+          「分かりやすい設計」と「丁寧な進行」で、安心して任せられるサイトを作ります。
         </p>
         <div class="row">
           <a class="btn" href="#contact">まずは相談する</a>
-          <a class="btn secondary" href="#price">料金を見る</a>
+          <a class="btn secondary" href="#works">制作例を見る</a>
         </div>
       </section>
 
       <section id="services">
         <h2>サービス</h2>
-        <p class="lead">目的に合わせて、必要なものだけをシンプルに制作します。</p>
+        <p class="lead">必要なものだけを過不足なく。目的に合わせて設計から一緒に作ります。</p>
+
+        <div class="grid cols3" style="margin-top:14px;">
+          <div class="panel">
+            <h3>LP制作</h3>
+            <p>集客・問い合わせにつながる導線を意識して、1ページで伝わる構成を作ります。</p>
+          </div>
+          <div class="panel">
+            <h3>コーポレートサイト</h3>
+            <p>「信頼感」を作る情報設計で、会社概要〜問い合わせまで自然に繋げます。</p>
+          </div>
+          <div class="panel">
+            <h3>WordPress導入・改修</h3>
+            <p>更新しやすい運用設計。既存サイトのWP化や表示速度の改善にも対応。</p>
+          </div>
+        </div>
       </section>
 
       <section id="price">
         <h2>料金の目安</h2>
+        <p class="lead">内容により前後しますが、まずは目安として。相談してから確定でOK。</p>
 
-        <div class="grid services">
-          <div class="service">
-            <h3>ライトプラン</h3>
-            <p class="price">¥5,000</p>
+        <div class="grid cols3" style="margin-top:14px;">
+          <div class="panel">
+            <h3>ライト</h3>
+            <div class="price">¥5,000</div>
             <ul>
-              <li>既存ページの軽微な修正</li>
               <li>テキスト差し替え</li>
-              <li>色・余白調整</li>
+              <li>色・余白の調整</li>
+              <li>軽微な修正</li>
             </ul>
           </div>
 
-          <div class="service">
-            <h3>スタンダードプラン</h3>
-            <p class="price">¥25,000</p>
+          <div class="panel">
+            <h3>スタンダード</h3>
+            <div class="price">¥25,000</div>
             <ul>
               <li>1ページLP制作</li>
               <li>スマホ対応</li>
@@ -263,9 +330,9 @@
             </ul>
           </div>
 
-          <div class="service">
-            <h3>プレミアムプラン</h3>
-            <p class="price">¥50,000</p>
+          <div class="panel">
+            <h3>プレミアム</h3>
+            <div class="price">¥50,000</div>
             <ul>
               <li>複数ページ構成</li>
               <li>問い合わせ導線設計</li>
@@ -275,11 +342,43 @@
         </div>
       </section>
 
+      <section id="works">
+        <h2>制作例</h2>
+        <p class="lead">デモとして2件公開中です。</p>
+
+        <div class="grid cols2" style="margin-top:14px;">
+          <div class="panel work">
+            <h3 style="margin:0 0 8px;">スポーツジム LP（架空）</h3>
+            <div style="margin:0 0 10px;">
+              <span class="badge">LP</span>
+              <span class="badge">レスポンシブ</span>
+            </div>
+            <p>集客導線を意識した1ページ構成。</p>
+            <div class="actions" style="margin-top:14px;">
+              <a class="small" href="works/gym-demo/" target="_blank" rel="noopener">デモを見る</a>
+            </div>
+          </div>
+
+          <div class="panel work">
+            <h3 style="margin:0 0 8px;">物流会社 コーポレート（架空）</h3>
+            <div style="margin:0 0 10px;">
+              <span class="badge">会社サイト</span>
+              <span class="badge">SEO基礎</span>
+            </div>
+            <p>会社概要＋問い合わせ導線を最短構築。</p>
+            <div class="actions" style="margin-top:14px;">
+              <a class="small" href="works/corp-logi/" target="_blank" rel="noopener">デモを見る</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" class="hero">
         <h2>お問い合わせ</h2>
-        <p class="lead">内容が固まっていなくても大丈夫です。</p>
+        <p class="lead">内容が固まっていなくても大丈夫。ざっくり相談からOK。</p>
         <div class="row">
           <a class="btn" href="mailto:trr9598@gmail.com">メールで相談する</a>
+          <a class="btn secondary" href="https://github.com/trr9598-bot" target="_blank" rel="noopener">GitHubを見る</a>
         </div>
       </section>
 
