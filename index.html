@@ -34,7 +34,7 @@
       width:min(960px, 100%);
       background:var(--panel);
       border-radius:18px;
-      padding:32px;
+      padding:38px 32px;
       box-shadow:0 20px 50px rgba(0,0,0,.25);
     }
 
@@ -43,8 +43,8 @@
       justify-content:space-between;
       align-items:center;
       border-bottom:1px solid var(--line);
-      padding-bottom:12px;
-      margin-bottom:24px;
+      padding-bottom:14px;
+      margin-bottom:28px;
       flex-wrap:wrap;
       gap:12px;
     }
@@ -61,10 +61,20 @@
       font-weight:700;
     }
 
+    section{
+      margin-top:44px;
+    }
+    section:first-of-type{
+      margin-top:0;
+    }
+
     h2{
-      margin-top:32px;
+      margin:28px 0 12px;
+      padding-bottom:10px;
       border-bottom:1px solid var(--line);
-      padding-bottom:8px;
+      font-size:22px;
+      font-weight:900;
+      letter-spacing:.01em;
     }
 
     .lead{
@@ -72,29 +82,33 @@
       line-height:1.8;
     }
 
+    ul{
+      padding-left:18px;
+    }
+
     .works{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:16px;
+      gap:18px;
       margin-top:16px;
     }
 
     .work{
-  display:flex;
-  flex-direction:column;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:18px;
-  min-height:240px;
-  box-shadow:0 10px 26px rgba(2,6,23,.06);
-  transition:transform .15s ease, box-shadow .15s ease;
-}
-.work:hover{
-  transform:translateY(-2px);
-  box-shadow:0 16px 40px rgba(2,6,23,.10);
-}
-.work .actions{ margin-top:auto; }
+      display:flex;
+      flex-direction:column;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+      min-height:220px;
+      box-shadow:0 10px 26px rgba(2,6,23,.06);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+
+    .work:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 40px rgba(2,6,23,.10);
+    }
 
     .badge{
       display:inline-block;
@@ -108,7 +122,7 @@
 
     .btn{
       display:inline-block;
-      margin-top:12px;
+      margin-top:14px;
       padding:10px 16px;
       border-radius:10px;
       background:var(--blue-500);
@@ -118,23 +132,12 @@
     }
 
     footer{
-      margin-top:32px;
+      margin-top:36px;
       text-align:center;
       font-size:12px;
       color:#94a3b8;
     }
-    /* === polish: spacing === */
-section{ margin-top:44px; }
-section:first-of-type{ margin-top:18px; }
-
-.card{ padding:38px 32px; }
-@media(max-width:880px){
-  .card{ padding:28px 20px; }
-}
   </style>
-  section{
-  margin-top:40px;
-}
 </head>
 
 <body>
@@ -155,39 +158,37 @@ section:first-of-type{ margin-top:18px; }
       <h2>自己紹介</h2>
       <p class="lead">
         航海士 × Web制作者。<br>
-        LP・コーポレート・WordPress制作を通じて、信頼されるサイトを作ります。
+        LP・コーポレート・WordPress制作を通じて、<br>
+        信頼されるシンプルなWebサイトを作ります。
       </p>
     </section>
 
     <section id="services">
-      h2{
-  margin:28px 0 12px;
-  padding-bottom:10px;
-  border-bottom:1px solid var(--line);
-  font-size:22px;
-  font-weight:900;
-  letter-spacing:.01em;
-}
+      <h2>サービス</h2>
+      <ul class="lead">
+        <li>LP制作：集客導線を意識した1ページ構成</li>
+        <li>コーポレートサイト制作：信頼感のある情報設計</li>
+        <li>WordPress導入・改修：更新しやすい構成に整備</li>
+      </ul>
     </section>
 
     <section id="works">
       <h2>制作例</h2>
-      <div class="works">
 
+      <div class="works">
         <div class="work">
           <strong>スポーツジム LP（架空）</strong><br>
           <span class="badge">LP</span>
           <span class="badge">レスポンシブ</span>
-          <p class="lead">集客導線を意識した1ページ構成</p>
+          <p class="lead">集客を意識したシンプルな1ページ構成</p>
         </div>
 
         <div class="work">
           <strong>物流会社 コーポレート（架空）</strong><br>
           <span class="badge">会社サイト</span>
           <span class="badge">SEO基礎</span>
-          <p class="lead">会社概要＋問い合わせ導線</p>
+          <p class="lead">会社概要＋問い合わせ導線を整理</p>
         </div>
-
       </div>
     </section>
 
