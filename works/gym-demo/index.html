@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>週1回から始めるパーソナルジム｜無料体験受付中</title>
+  <title>週1回から始めるパーソナルジム｜無料体験</title>
   <meta name="description" content="週1回から始める、続けられるパーソナルトレーニング。完全マンツーマン・夜22時まで対応。無料体験受付中。">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,17 +20,14 @@
 
       --b50:#eff6ff;
       --b100:#dbeafe;
-      --b500:#3b82f6;
       --b600:#2563eb;
       --b700:#1d4ed8;
 
-      --shadow-sm:0 8px 24px rgba(2,6,23,.08);
-      --shadow-md:0 18px 50px rgba(2,6,23,.12);
+      --shadow:0 18px 50px rgba(2,6,23,.12);
       --radius:18px;
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:"Inter",system-ui,-apple-system,sans-serif;
@@ -45,34 +42,24 @@
     .wrap{
       width:min(1100px,92vw);
       margin:0 auto;
-      padding:28px 0 80px;
+      padding:32px 0 80px;
     }
 
     header{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:14px 0 22px;
+      margin-bottom:22px;
     }
-    .brand strong{
-      font-size:16px;
-      letter-spacing:.04em;
-    }
-    .brand span{
-      display:block;
-      font-size:12px;
-      color:#64748b;
-      font-weight:700;
-      margin-top:2px;
-    }
+    header strong{font-size:16px}
+    header span{font-size:12px;color:#64748b;font-weight:700}
     nav a{
       margin-left:16px;
       text-decoration:none;
-      font-weight:800;
       color:var(--muted);
+      font-weight:800;
       font-size:14px;
     }
-    nav a:hover{color:var(--b700)}
 
     /* HERO */
     .hero{
@@ -83,7 +70,7 @@
       border:1px solid var(--b100);
       border-radius:var(--radius);
       padding:34px;
-      box-shadow:var(--shadow-md);
+      box-shadow:var(--shadow);
     }
     @media(max-width:900px){
       .hero{grid-template-columns:1fr}
@@ -96,69 +83,54 @@
     }
     .hero p{
       color:var(--muted);
-      font-size:16px;
       margin:0 0 18px;
     }
 
-    .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
     .pill{
+      display:inline-block;
+      margin-right:8px;
+      margin-bottom:8px;
+      padding:6px 12px;
+      border-radius:999px;
       background:var(--b50);
       border:1px solid var(--b100);
       color:var(--b700);
-      padding:6px 12px;
-      border-radius:999px;
       font-size:12px;
       font-weight:900;
     }
 
-    .btnrow{display:flex;gap:12px;flex-wrap:wrap}
     .btn{
+      display:inline-block;
+      margin-top:10px;
       padding:14px 18px;
       border-radius:14px;
+      background:linear-gradient(135deg,var(--b700),var(--b600));
+      color:#fff;
       font-weight:900;
       text-decoration:none;
-      color:#fff;
-      background:linear-gradient(135deg,var(--b700),var(--b600));
       box-shadow:0 16px 34px rgba(37,99,235,.22);
-    }
-    .btn.secondary{
-      background:#fff;
-      color:var(--b700);
-      border:1px solid var(--b100);
-      box-shadow:none;
     }
 
     .heroMedia{
       border-radius:16px;
-      background:
-        linear-gradient(135deg, rgba(29,78,216,.25), rgba(59,130,246,.1)),
-        radial-gradient(600px 260px at 30% 20%, rgba(255,255,255,.8), transparent 60%);
-      display:grid;
-      place-items:center;
-      font-weight:900;
-      color:#1e293b;
-      box-shadow:var(--shadow-sm);
-      min-height:260px;
-      text-align:center;
+      overflow:hidden;
+      box-shadow:0 16px 40px rgba(2,6,23,.18);
     }
-    .heroMedia small{
+    .heroMedia img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
       display:block;
-      margin-top:6px;
-      font-weight:700;
-      opacity:.7;
     }
 
-    /* SECTIONS */
+    /* SECTION */
     section{margin-top:48px}
     h2{
       font-size:22px;
-      margin:0 0 14px;
+      margin-bottom:14px;
       font-weight:900;
     }
-    .sub{
-      color:var(--muted);
-      margin-bottom:18px;
-    }
+    .sub{color:var(--muted);margin-bottom:18px}
 
     .grid{
       display:grid;
@@ -168,37 +140,26 @@
     @media(max-width:900px){
       .grid{grid-template-columns:1fr}
     }
+
     .box{
       background:#fff;
       border:1px solid var(--line);
       border-radius:16px;
       padding:20px;
-      box-shadow:var(--shadow-sm);
+      box-shadow:0 10px 26px rgba(2,6,23,.08);
     }
-    .box strong{
-      display:block;
-      margin-bottom:8px;
-    }
-    .box p{margin:0;color:var(--muted)}
+    .box strong{display:block;margin-bottom:8px}
 
-    /* CTA */
     .cta{
-      background:linear-gradient(135deg,var(--b700),var(--b600));
-      color:#fff;
-      border-radius:20px;
+      margin-top:60px;
       padding:36px;
       text-align:center;
-      box-shadow:var(--shadow-md);
+      background:linear-gradient(135deg,var(--b700),var(--b600));
+      color:#fff;
+      border-radius:22px;
+      box-shadow:var(--shadow);
     }
-    .cta h2{color:#fff}
     .cta p{opacity:.9}
-
-    footer{
-      margin-top:40px;
-      text-align:center;
-      font-size:12px;
-      color:#94a3b8;
-    }
   </style>
 </head>
 
@@ -206,14 +167,13 @@
   <div class="wrap">
 
     <header>
-      <div class="brand">
-        <strong>GYM DEMO</strong>
+      <div>
+        <strong>GYM DEMO</strong><br>
         <span>週1回から始めるパーソナル</span>
       </div>
       <nav>
         <a href="#features">特徴</a>
         <a href="#menu">内容</a>
-        <a href="#price">料金</a>
         <a href="#trial">体験</a>
       </nav>
     </header>
@@ -227,21 +187,16 @@
           完全マンツーマン × 夜22時まで対応。
         </p>
 
-        <div class="pillrow">
-          <span class="pill">完全マンツーマン</span>
-          <span class="pill">夜22時まで</span>
-          <span class="pill">週1回OK</span>
-        </div>
+        <span class="pill">完全マンツーマン</span>
+        <span class="pill">夜22時まで</span>
+        <span class="pill">週1回OK</span>
 
-        <div class="btnrow">
-          <a class="btn" href="#trial">無料体験を申し込む</a>
-          <a class="btn secondary" href="#features">詳しく見る</a>
-        </div>
+        <br>
+        <a class="btn" href="#trial">無料体験を申し込む</a>
       </div>
 
       <div class="heroMedia">
-        パーソナルトレーニングの雰囲気
-        <small>※ここは写真に差し替え可能</small>
+        <img src="gym.jpg" alt="パーソナルトレーニングの様子">
       </div>
     </section>
 
@@ -252,15 +207,15 @@
       <div class="grid">
         <div class="box">
           <strong>完全マンツーマン</strong>
-          <p>他人を気にせず、あなた専用のメニューで最短ルート。</p>
+          <p>他人を気にせず、あなた専用のメニューで進めます。</p>
         </div>
         <div class="box">
           <strong>夜22時まで対応</strong>
-          <p>学校・仕事終わりでも通えるから生活を崩さない。</p>
+          <p>仕事・学校終わりでも無理なく通えます。</p>
         </div>
         <div class="box">
           <strong>週1回からOK</strong>
-          <p>最初から頑張らせない。続けることを最優先。</p>
+          <p>最初から頑張らせない設計です。</p>
         </div>
       </div>
     </section>
@@ -268,7 +223,7 @@
     <!-- MENU -->
     <section id="menu">
       <h2>トレーニング内容</h2>
-      <p class="sub">初心者でも安心できる設計です。</p>
+      <p class="sub">初心者でも安心できる内容です。</p>
       <div class="grid">
         <div class="box">
           <strong>目的別プログラム</strong>
@@ -280,27 +235,7 @@
         </div>
         <div class="box">
           <strong>フォーム重視</strong>
-          <p>正しい動きで効率よく成果を出す。</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICE -->
-    <section id="price">
-      <h2>料金の目安</h2>
-      <p class="sub">まずは体験してから決められます。</p>
-      <div class="grid">
-        <div class="box">
-          <strong>週1回コース</strong>
-          <p>月◯◯円〜</p>
-        </div>
-        <div class="box">
-          <strong>入会費が不安な方へ</strong>
-          <p>体験後、納得した方のみご案内。</p>
-        </div>
-        <div class="box">
-          <strong>続けられるか不安な方へ</strong>
-          <p>無理な勧誘・頻度アップはありません。</p>
+          <p>正しい動きで効率よく成果を出します。</p>
         </div>
       </div>
     </section>
@@ -309,19 +244,9 @@
     <section class="cta" id="trial">
       <h2>まずは無料体験から</h2>
       <p>無理な勧誘はありません。気軽にご相談ください。</p>
-      <div class="btnrow" style="justify-content:center">
-        <a class="btn" href="mailto:trr9598@gmail.com?subject=無料体験の申込み">無料体験を申し込む</a>
-      </div>
+      <a class="btn" href="mailto:trr9598@gmail.com?subject=無料体験の申込み">無料体験を申し込む</a>
     </section>
 
-    <footer>
-      © <span id="y"></span> GYM DEMO
-    </footer>
-
   </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
