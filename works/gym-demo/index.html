@@ -1,35 +1,327 @@
-<!doctype html><html lang="ja"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>[v21] スポーツジム | 体験トレーニングLP（デモ）</title>
-<style>
-:root{--fg:#0f172a;--acc:#16a34a;--muted:#475569;--bg:#f8fafc}
-*{box-sizing:border-box} body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system;background:var(--bg);color:var(--fg)}
-header{padding:14px 18px;background:#0f172a;color:#fff}
-header .wrap{max-width:960px;margin:auto;display:flex;justify-content:space-between;align-items:center}
-main{max-width:960px;margin:24px auto;padding:0 18px}
-.hero{border-radius:16px;padding:28px;background:linear-gradient(135deg,#d1fae5,#bbf7d0)}
-.hero h1{margin:0 0 8px;font-size:30px}.hero p{margin:0;color:#14532d}.cta{margin-top:18px}
-.btn{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;padding:12px 16px;border-radius:12px;font-weight:700}
-.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:22px}
-.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px}
-footer{margin:40px 0 20px;color:var(--muted);text-align:center;font-size:12px}
-</style></head>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>週1回から始めるパーソナルジム｜無料体験受付中</title>
+  <meta name="description" content="週1回から始める、続けられるパーソナルトレーニング。完全マンツーマン・夜22時まで対応。無料体験受付中。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f5f8ff;
+      --panel:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+
+      --b50:#eff6ff;
+      --b100:#dbeafe;
+      --b500:#3b82f6;
+      --b600:#2563eb;
+      --b700:#1d4ed8;
+
+      --shadow-sm:0 8px 24px rgba(2,6,23,.08);
+      --shadow-md:0 18px 50px rgba(2,6,23,.12);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 15% -10%, var(--b100), transparent 60%),
+        radial-gradient(900px 500px at 95% 10%, var(--b50), transparent 55%),
+        var(--bg);
+      line-height:1.7;
+    }
+
+    .wrap{
+      width:min(1100px,92vw);
+      margin:0 auto;
+      padding:28px 0 80px;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 0 22px;
+    }
+    .brand strong{
+      font-size:16px;
+      letter-spacing:.04em;
+    }
+    .brand span{
+      display:block;
+      font-size:12px;
+      color:#64748b;
+      font-weight:700;
+      margin-top:2px;
+    }
+    nav a{
+      margin-left:16px;
+      text-decoration:none;
+      font-weight:800;
+      color:var(--muted);
+      font-size:14px;
+    }
+    nav a:hover{color:var(--b700)}
+
+    /* HERO */
+    .hero{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:28px;
+      background:linear-gradient(135deg,#fff,var(--b50));
+      border:1px solid var(--b100);
+      border-radius:var(--radius);
+      padding:34px;
+      box-shadow:var(--shadow-md);
+    }
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+    }
+    .hero h1{
+      font-size:clamp(30px,4.8vw,46px);
+      line-height:1.15;
+      margin:0 0 12px;
+      font-weight:900;
+    }
+    .hero p{
+      color:var(--muted);
+      font-size:16px;
+      margin:0 0 18px;
+    }
+
+    .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+    .pill{
+      background:var(--b50);
+      border:1px solid var(--b100);
+      color:var(--b700);
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .btnrow{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      padding:14px 18px;
+      border-radius:14px;
+      font-weight:900;
+      text-decoration:none;
+      color:#fff;
+      background:linear-gradient(135deg,var(--b700),var(--b600));
+      box-shadow:0 16px 34px rgba(37,99,235,.22);
+    }
+    .btn.secondary{
+      background:#fff;
+      color:var(--b700);
+      border:1px solid var(--b100);
+      box-shadow:none;
+    }
+
+    .heroMedia{
+      border-radius:16px;
+      background:
+        linear-gradient(135deg, rgba(29,78,216,.25), rgba(59,130,246,.1)),
+        radial-gradient(600px 260px at 30% 20%, rgba(255,255,255,.8), transparent 60%);
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      color:#1e293b;
+      box-shadow:var(--shadow-sm);
+      min-height:260px;
+      text-align:center;
+    }
+    .heroMedia small{
+      display:block;
+      margin-top:6px;
+      font-weight:700;
+      opacity:.7;
+    }
+
+    /* SECTIONS */
+    section{margin-top:48px}
+    h2{
+      font-size:22px;
+      margin:0 0 14px;
+      font-weight:900;
+    }
+    .sub{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr}
+    }
+    .box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:20px;
+      box-shadow:var(--shadow-sm);
+    }
+    .box strong{
+      display:block;
+      margin-bottom:8px;
+    }
+    .box p{margin:0;color:var(--muted)}
+
+    /* CTA */
+    .cta{
+      background:linear-gradient(135deg,var(--b700),var(--b600));
+      color:#fff;
+      border-radius:20px;
+      padding:36px;
+      text-align:center;
+      box-shadow:var(--shadow-md);
+    }
+    .cta h2{color:#fff}
+    .cta p{opacity:.9}
+
+    footer{
+      margin-top:40px;
+      text-align:center;
+      font-size:12px;
+      color:#94a3b8;
+    }
+  </style>
+</head>
+
 <body>
-<header><div class="wrap"><strong>GREEN GYM</strong><nav><a href="/" style="color:#bfdbfe;text-decoration:none">TOPへ戻る</a></nav></div></header>
-<main>
-  <section class="hero">
-    <h1>[v21] まずは体験トレーニングから。</h1>
-    <p>初心者歓迎。パーソナル指導で理想の体づくりをサポートします。</p>
-    <div class="cta"><a class="btn" href="#">体験を予約する</a></div>
-  </section>
-  <section>
-    <h2>選ばれる理由</h2>
-    <div class="grid">
-      <div class="card"><strong>専門トレーナー</strong><p>一人ひとりに合わせたメニュー。</p></div>
-      <div class="card"><strong>通いやすい料金</strong><p>月額/回数券をご用意。</p></div>
-      <div class="card"><strong>駅近・手ぶらOK</strong><p>レンタルウェア・タオル完備。</p></div>
-    </div>
-  </section>
-  <footer>© GREEN GYM（デモ）</footer>
-</main>
-</body></html>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">
+        <strong>GYM DEMO</strong>
+        <span>週1回から始めるパーソナル</span>
+      </div>
+      <nav>
+        <a href="#features">特徴</a>
+        <a href="#menu">内容</a>
+        <a href="#price">料金</a>
+        <a href="#trial">体験</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>週1回から始める<br>続けられるパーソナルトレーニング</h1>
+        <p>
+          運動したいけど続かなかった人へ。<br>
+          完全マンツーマン × 夜22時まで対応。
+        </p>
+
+        <div class="pillrow">
+          <span class="pill">完全マンツーマン</span>
+          <span class="pill">夜22時まで</span>
+          <span class="pill">週1回OK</span>
+        </div>
+
+        <div class="btnrow">
+          <a class="btn" href="#trial">無料体験を申し込む</a>
+          <a class="btn secondary" href="#features">詳しく見る</a>
+        </div>
+      </div>
+
+      <div class="heroMedia">
+        パーソナルトレーニングの雰囲気
+        <small>※ここは写真に差し替え可能</small>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+      <h2>続けられる理由</h2>
+      <p class="sub">無理をさせないから、自然と習慣になります。</p>
+      <div class="grid">
+        <div class="box">
+          <strong>完全マンツーマン</strong>
+          <p>他人を気にせず、あなた専用のメニューで最短ルート。</p>
+        </div>
+        <div class="box">
+          <strong>夜22時まで対応</strong>
+          <p>学校・仕事終わりでも通えるから生活を崩さない。</p>
+        </div>
+        <div class="box">
+          <strong>週1回からOK</strong>
+          <p>最初から頑張らせない。続けることを最優先。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+      <h2>トレーニング内容</h2>
+      <p class="sub">初心者でも安心できる設計です。</p>
+      <div class="grid">
+        <div class="box">
+          <strong>目的別プログラム</strong>
+          <p>運動不足解消・体力づくり・引き締め。</p>
+        </div>
+        <div class="box">
+          <strong>無理のない負荷</strong>
+          <p>ケガを防ぎながら着実にレベルアップ。</p>
+        </div>
+        <div class="box">
+          <strong>フォーム重視</strong>
+          <p>正しい動きで効率よく成果を出す。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICE -->
+    <section id="price">
+      <h2>料金の目安</h2>
+      <p class="sub">まずは体験してから決められます。</p>
+      <div class="grid">
+        <div class="box">
+          <strong>週1回コース</strong>
+          <p>月◯◯円〜</p>
+        </div>
+        <div class="box">
+          <strong>入会費が不安な方へ</strong>
+          <p>体験後、納得した方のみご案内。</p>
+        </div>
+        <div class="box">
+          <strong>続けられるか不安な方へ</strong>
+          <p>無理な勧誘・頻度アップはありません。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="trial">
+      <h2>まずは無料体験から</h2>
+      <p>無理な勧誘はありません。気軽にご相談ください。</p>
+      <div class="btnrow" style="justify-content:center">
+        <a class="btn" href="mailto:trr9598@gmail.com?subject=無料体験の申込み">無料体験を申し込む</a>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> GYM DEMO
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
