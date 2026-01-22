@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>導入事例｜LOGI TRANS（デモ）</title>
+  <title>会社概要｜LOGI TRANS（デモ）</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
       margin:0;
       font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
       color:var(--text);
-      background:radial-gradient(900px 520px at 90% 10%, var(--b50), transparent 55%), var(--bg);
+      background:radial-gradient(900px 520px at 15% -10%, var(--b100), transparent 60%), var(--bg);
       line-height:1.7;
     }
     header{ position:sticky; top:0; backdrop-filter:blur(10px); background:rgba(247,251,255,.75); border-bottom:1px solid rgba(226,232,240,.7); }
@@ -39,43 +39,11 @@
     h1{ margin:0 0 8px; font-size:clamp(26px,4vw,36px); font-weight:900; }
     p{ color:var(--muted); margin:0; }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:16px;
-      margin-top:22px;
-    }
-    @media(max-width:900px){ .grid{ grid-template-columns:1fr; } }
-    .case{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
-      box-shadow:0 10px 30px rgba(2,6,23,.06);
-    }
-    .badge{
-      display:inline-block;
-      font-size:12px;
-      padding:4px 10px;
-      border-radius:999px;
-      background:var(--b50);
-      border:1px solid var(--b100);
-      color:var(--b700);
-      font-weight:900;
-      margin-right:8px;
-      margin-bottom:10px;
-    }
-    .case h2{
-      margin:0 0 8px;
-      font-size:16px;
-      font-weight:900;
-    }
-    .case ul{
-      margin:10px 0 0;
-      padding-left:18px;
-      color:var(--muted);
-      line-height:1.8;
-    }
+    h2{ margin:38px 0 12px; font-size:20px; font-weight:900; }
+    .panel{ background:#fff; border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 10px 30px rgba(2,6,23,.06); }
+    table{ width:100%; border-collapse:collapse; }
+    th,td{ padding:12px; border-bottom:1px solid var(--line); text-align:left; font-size:14px; }
+    th{ width:28%; color:#334155; }
     .btn{
       display:inline-block; margin-top:14px;
       padding:12px 16px; border-radius:12px; text-decoration:none; font-weight:900;
@@ -90,10 +58,10 @@
 <body>
   <header>
     <div class="inner">
-      <div class="brand"><strong>LOGI TRANS</strong><span style="color:#64748b; font-size:12px; font-weight:700;">導入事例（デモ）</span></div>
+      <div class="brand"><strong>LOGI TRANS</strong><span style="color:#64748b; font-size:12px; font-weight:700;">会社概要（デモ）</span></div>
       <nav>
         <a href="index.html">トップ</a>
-        <a href="company.html">会社概要</a>
+        <a href="case.html">導入事例</a>
         <a href="index.html#contact">見積・相談</a>
       </nav>
     </div>
@@ -101,54 +69,35 @@
 
   <main class="wrap">
     <section class="hero">
-      <h1>導入事例（デモ）</h1>
-      <p>“成果っぽい形”を作るページ。案件獲得で効く。</p>
+      <h1>会社概要</h1>
+      <p>信頼のためのページ。BtoBはここがあるだけで“それっぽさ”が爆上がりする。</p>
       <div style="display:flex; gap:10px; flex-wrap:wrap;">
         <a class="btn" href="index.html#contact">相談する</a>
         <a class="btn secondary" href="index.html">トップに戻る</a>
       </div>
     </section>
 
-    <section class="grid" aria-label="事例">
-      <article class="case">
-        <span class="badge">EC</span><span class="badge">保管＋出荷</span>
-        <h2>事例1：出荷作業が回らない → 保管・出荷を一括化</h2>
-        <ul>
-          <li>課題：出荷量増で社内が限界 / ミスが増える</li>
-          <li>対応：保管＋流通加工＋出荷を一括に</li>
-          <li>結果：出荷の安定化・作業時間の削減（想定）</li>
-        </ul>
-      </article>
+    <section>
+      <h2>基本情報（デモ）</h2>
+      <div class="panel">
+        <table>
+          <tr><th>会社名</th><td>LOGI TRANS（デモ）</td></tr>
+          <tr><th>事業内容</th><td>定期便 / スポット便 / 保管・流通加工 / EC出荷支援</td></tr>
+          <tr><th>対応エリア</th><td>全国（主要エリア想定）</td></tr>
+          <tr><th>強み</th><td>相談→提案が速い / 現場運用優先 / 保管〜出荷の一括</td></tr>
+          <tr><th>連絡先</th><td>trr9598@gmail.com（デモ）</td></tr>
+        </table>
+      </div>
+    </section>
 
-      <article class="case">
-        <span class="badge">卸</span><span class="badge">定期便</span>
-        <h2>事例2：納品時間がブレる → 定期便で安定運用</h2>
-        <ul>
-          <li>課題：納品時間が不安定でクレームが怖い</li>
-          <li>対応：固定ルート/固定時間で定期便化</li>
-          <li>結果：納品品質の安定化（想定）</li>
-        </ul>
-      </article>
-
-      <article class="case">
-        <span class="badge">メーカー</span><span class="badge">スポット</span>
-        <h2>事例3：繁忙期の急増 → スポットでピーク対応</h2>
-        <ul>
-          <li>課題：繁忙期だけ荷量が爆増、通常運用が崩れる</li>
-          <li>対応：スポット便を追加してピークだけ吸収</li>
-          <li>結果：繁忙期の破綻回避（想定）</li>
-        </ul>
-      </article>
-
-      <article class="case">
-        <span class="badge">共通</span><span class="badge">提案</span>
-        <h2>共通：まず“現状共有”から始める</h2>
-        <ul>
-          <li>やること：現状のフロー・制約・不安点を整理</li>
-          <li>出すもの：改善の方向性＋現実的なプラン</li>
-          <li>狙い：運用が回ることを優先（机上の最適化は避ける）</li>
-        </ul>
-      </article>
+    <section>
+      <h2>方針</h2>
+      <div class="panel">
+        <p style="margin:0; color:#475569;">
+          物流は“安いだけ”だと現場が破綻しがち。<br>
+          LOGI TRANSは、数字（コスト）と運用（回るか）をセットで見て、現実的な改善を積み上げる想定。
+        </p>
+      </div>
     </section>
 
     <footer>© <span id="y"></span> LOGI TRANS（デモ）</footer>
