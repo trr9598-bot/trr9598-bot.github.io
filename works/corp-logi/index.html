@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>LOGI TRANS｜物流・配送の最適化（デモ）</title>
-  <meta name="description" content="中小企業・EC事業者向けに、定期便・スポット便・保管/流通加工まで一気通貫。最短で見積依頼・相談につながる物流会社コーポレートサイト（デモ）。">
+  <meta name="description" content="中小企業・EC事業者向けに、定期便・スポット便・保管/流通加工まで一気通貫。無料で相談→最短で見積提案（デモ）。">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,13 +20,12 @@
 
       --b50:#eff6ff;
       --b100:#dbeafe;
-      --b500:#3b82f6;
       --b600:#2563eb;
       --b700:#1d4ed8;
       --ring:rgba(37,99,235,.22);
 
-      --radius:18px;
       --shadow:0 18px 50px rgba(2,6,23,.10);
+      --radius:18px;
     }
 
     *{box-sizing:border-box}
@@ -40,6 +39,7 @@
         var(--bg);
       line-height:1.7;
     }
+    a{ color:inherit; }
 
     .wrap{ width:min(1100px,92vw); margin:0 auto; padding:26px 0 90px; }
 
@@ -109,7 +109,7 @@
       padding:34px;
       box-shadow:var(--shadow);
       display:grid;
-      grid-template-columns:1.2fr .8fr;
+      grid-template-columns:1.15fr .85fr;
       gap:26px;
       overflow:hidden;
       position:relative;
@@ -134,7 +134,7 @@
       z-index:1;
     }
     .hero p{
-      margin:0 0 18px;
+      margin:0 0 16px;
       color:var(--muted);
       position:relative;
       z-index:1;
@@ -154,6 +154,7 @@
       z-index:1;
     }
 
+    /* KPI */
     .kpi{
       background:#0b1220;
       color:#e5e7eb;
@@ -215,9 +216,38 @@
       border:1px solid var(--b100);
       color:var(--b700);
       margin-bottom:10px;
+      font-size:18px;
     }
     .card h3{ margin:6px 0 6px; font-size:16px; font-weight:900; }
     .card p{ margin:0; color:var(--muted); font-size:14px; line-height:1.75; }
+
+    /* ===== Proof row ===== */
+    .proof{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media(max-width:900px){ .proof{ grid-template-columns:1fr; } }
+    .panel{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 10px 30px rgba(2,6,23,.06);
+    }
+    .list{
+      margin:0; padding-left:18px; color:var(--muted);
+      line-height:1.8;
+    }
+    .mini a{
+      display:inline-block;
+      margin-right:10px;
+      font-weight:900;
+      color:var(--b700);
+      text-decoration:none;
+    }
+    .mini a:hover{ text-decoration:underline; }
 
     /* ===== Process ===== */
     .steps{
@@ -245,6 +275,40 @@
     }
     .step strong{ display:block; margin-bottom:6px; }
     .step span{ color:var(--muted); font-size:14px; }
+
+    /* ===== Form (UI only) ===== */
+    .form{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    @media(max-width:900px){ .form{ grid-template-columns:1fr; } }
+
+    label{ display:block; font-size:12px; font-weight:900; color:#334155; margin-bottom:6px; }
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      font:inherit;
+      outline:none;
+      background:#fff;
+    }
+    input:focus, textarea:focus, select:focus{
+      box-shadow:0 0 0 6px var(--ring);
+      border-color:#93c5fd;
+    }
+    textarea{ min-height:120px; resize:vertical; grid-column:1 / -1; }
+
+    .form-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      grid-column:1 / -1;
+      align-items:center;
+    }
+    .note{ color:#64748b; font-size:12px; margin:0; }
 
     /* ===== FAQ ===== */
     details{
@@ -307,8 +371,9 @@
       <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
         <nav aria-label="ページ内リンク">
           <a href="#service">サービス</a>
-          <a href="#flow">導入の流れ</a>
-          <a href="#faq">よくある質問</a>
+          <a href="company.html">会社概要</a>
+          <a href="case.html">導入事例</a>
+          <a href="#faq">FAQ</a>
         </nav>
         <a class="btn" href="#contact">見積・相談する</a>
       </div>
@@ -320,19 +385,19 @@
     <!-- HERO -->
     <section class="hero" id="top" aria-label="ヒーロー">
       <div>
-        <h1>全国を、確実に、迅速に。<br>配送コストと手間を最適化</h1>
+        <h1>配送コストと手間を、<br>“今の運用のまま”最適化</h1>
         <p>
-          中小企業・EC事業者様向けに、<strong>定期便・スポット便・保管/流通加工</strong>まで一気通貫。<br>
-          “今の運用を崩さず”改善できるプランを提案します。
+          中小企業・EC事業者向けに、<strong>定期便・スポット便・保管/流通加工</strong>まで一気通貫。<br>
+          「急ぎで困ってる」「出荷が回らない」「倉庫が限界」──まず状況だけでもOK。
         </p>
 
         <span class="pill">最短で見積提案</span>
-        <span class="pill">全国対応</span>
+        <span class="pill">全国対応（想定）</span>
         <span class="pill">保管〜加工まで</span>
 
         <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; position:relative; z-index:1;">
           <a class="btn" href="#contact">無料で相談する</a>
-          <a class="btn secondary" href="#service">サービスを見る</a>
+          <a class="btn secondary" href="case.html">導入事例を見る</a>
         </div>
       </div>
 
@@ -344,7 +409,7 @@
           <div class="box"><div class="n">一括</div><div class="l">保管〜出荷</div></div>
         </div>
         <div style="margin-top:12px; color:#cbd5e1; font-size:13px;">
-          「急ぎ」「コスト」「管理が大変」など、まず状況だけでもOK。
+          不安：価格・品質・リードタイム → ここで先に潰す設計
         </div>
       </aside>
     </section>
@@ -352,25 +417,52 @@
     <!-- SERVICES -->
     <section id="service">
       <h2>サービス</h2>
-      <p class="sub">よくある悩みを、最短で解決できるメニューにしました。</p>
+      <p class="sub">よくある悩みを、最短で解決できるメニューにした。</p>
 
       <div class="grid">
         <div class="card">
           <div class="ico" aria-hidden="true">🚚</div>
           <h3>定期便</h3>
-          <p>毎日の配送を安定運用。固定ルート/固定時間で、運用コストを整えます。</p>
+          <p>固定ルート/固定時間で配送を安定化。委託の見える化と運用コストの最適化。</p>
         </div>
 
         <div class="card">
           <div class="ico" aria-hidden="true">⚡</div>
           <h3>スポット便</h3>
-          <p>急な出荷・繁忙期に柔軟対応。必要な時だけ使えるプランも。</p>
+          <p>急な出荷・繁忙期に柔軟対応。「今日だけ」「今週だけ」も想定。</p>
         </div>
 
         <div class="card">
           <div class="ico" aria-hidden="true">📦</div>
           <h3>保管・流通加工</h3>
-          <p>在庫管理〜梱包・ラベル貼りまで。ECの出荷作業を丸ごと軽くします。</p>
+          <p>在庫管理〜梱包・ラベル貼りまで。EC出荷のボトルネックを丸ごと軽くする。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF / LINKS -->
+    <section aria-label="信頼の補強">
+      <div class="proof">
+        <div class="panel">
+          <h2 style="margin:0 0 10px;">選ばれる理由（デモ）</h2>
+          <ul class="list">
+            <li>“現場が回ること”優先で提案（机上の最適化で終わらせない）</li>
+            <li>配送だけ/保管だけ/丸投げ、全部OK</li>
+            <li>相談→提案までが速い（まずは方向性を出す）</li>
+          </ul>
+          <p class="mini" style="margin:12px 0 0;">
+            <a href="company.html">会社概要を見る →</a>
+            <a href="case.html">導入事例を見る →</a>
+          </p>
+        </div>
+
+        <div class="panel">
+          <h2 style="margin:0 0 10px;">対象の例</h2>
+          <ul class="list">
+            <li>EC：出荷量が増えて社内で回らない</li>
+            <li>卸：納品時間や品質を安定させたい</li>
+            <li>メーカー：倉庫が限界、加工も含めて整理したい</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -378,7 +470,7 @@
     <!-- FLOW -->
     <section id="flow">
       <h2>導入の流れ</h2>
-      <p class="sub">面倒な手続きより、まずは状況ヒアリングから。</p>
+      <p class="sub">面倒な手続きより、まず状況ヒアリングから。</p>
 
       <div class="steps">
         <div class="step">
@@ -407,16 +499,16 @@
     <!-- FAQ -->
     <section id="faq">
       <h2>よくある質問</h2>
-      <p class="sub">問い合わせ前の不安を、ここで潰しておく。</p>
+      <p class="sub">問い合わせ前の不安を先に潰しておく。</p>
 
       <details>
         <summary>Q. まず相談だけでも大丈夫？</summary>
-        <p>A. OK。状況共有だけでも、改善の方向性が見えることが多い。</p>
+        <p>A. OK。現状共有だけでも、改善の方向性が見えることが多い。</p>
       </details>
 
       <details>
-        <summary>Q. 小規模でも対応してくれる？</summary>
-        <p>A. もちろん。中小・EC向けの提案が得意、って想定で作ってる。</p>
+        <summary>Q. 小規模でも対応できる？</summary>
+        <p>A. できる想定。中小・EC向けの提案が刺さる設計にしてある。</p>
       </details>
 
       <details>
@@ -425,15 +517,65 @@
       </details>
     </section>
 
-    <!-- CONTACT / CTA -->
-    <section class="cta" id="contact" aria-label="問い合わせ">
+    <!-- CONTACT (Form UI) -->
+    <section id="contact" aria-label="問い合わせ">
+      <h2>見積・相談（無料）</h2>
+      <p class="sub">フォーム風（デモ）。送信はメール起動でOKにしてる。</p>
+
+      <div class="panel">
+        <div class="form">
+          <div>
+            <label for="cname">会社名</label>
+            <input id="cname" type="text" placeholder="例）〇〇株式会社">
+          </div>
+          <div>
+            <label for="name">担当者名</label>
+            <input id="name" type="text" placeholder="例）山田 太郎">
+          </div>
+          <div>
+            <label for="tel">電話</label>
+            <input id="tel" type="tel" placeholder="例）090-xxxx-xxxx">
+          </div>
+          <div>
+            <label for="mail">メール</label>
+            <input id="mail" type="email" placeholder="例）info@example.com">
+          </div>
+
+          <div>
+            <label for="type">相談内容</label>
+            <select id="type">
+              <option>定期便</option>
+              <option>スポット便</option>
+              <option>保管・流通加工</option>
+              <option>まず相談したい</option>
+            </select>
+          </div>
+          <div>
+            <label for="area">エリア</label>
+            <input id="area" type="text" placeholder="例）福岡→東京 など">
+          </div>
+
+          <textarea id="msg" placeholder="状況だけでもOK（例：出荷が月◯◯件、繁忙期だけ増える、倉庫が限界 など）"></textarea>
+
+          <div class="form-actions">
+            <a class="btn" id="mailtoBtn" href="mailto:trr9598@gmail.com?subject=物流の見積/相談（デモ）&body=相談内容を入力してください">この内容でメール送信</a>
+            <a class="btn secondary" href="#top">上に戻る</a>
+            <p class="note">※ デモなので実送信はmailtoでメールアプリが開く方式</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" aria-label="最終導線">
       <div>
-        <h2>見積・相談（無料）</h2>
-        <p>「今の運用を崩さず、まず改善できるか」だけでもOK。</p>
+        <h2>まずは“現状だけ”送ってOK</h2>
+        <p>価格・品質・リードタイムの不安も、ここで整理してから提案する想定。</p>
       </div>
       <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <a class="btn" href="mailto:trr9598@gmail.com?subject=物流の見積/相談（デモ）">メールで相談</a>
-        <a class="btn secondary" href="#top">上に戻る</a>
+        <a class="btn secondary" href="#contact">相談フォームへ</a>
+        <a class="btn secondary" href="company.html">会社概要</a>
+        <a class="btn secondary" href="case.html">導入事例</a>
       </div>
     </section>
 
@@ -443,6 +585,32 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // mailtoの本文をフォーム入力から作る（見た目＋最低限の実用）
+    const $ = (id)=>document.getElementById(id);
+    const btn = $("mailtoBtn");
+
+    function buildMailto(){
+      const lines = [
+        "【会社名】" + ($("cname").value || "-"),
+        "【担当者名】" + ($("name").value || "-"),
+        "【電話】" + ($("tel").value || "-"),
+        "【メール】" + ($("mail").value || "-"),
+        "【相談内容】" + ($("type").value || "-"),
+        "【エリア】" + ($("area").value || "-"),
+        "",
+        "【詳細】",
+        ($("msg").value || "-")
+      ];
+      const body = encodeURIComponent(lines.join("\n"));
+      btn.href = "mailto:trr9598@gmail.com?subject=" + encodeURIComponent("物流の見積/相談（デモ）") + "&body=" + body;
+    }
+
+    ["cname","name","tel","mail","type","area","msg"].forEach(id=>{
+      $(id).addEventListener("input", buildMailto);
+      $(id).addEventListener("change", buildMailto);
+    });
+    buildMailto();
   </script>
 </body>
 </html>
