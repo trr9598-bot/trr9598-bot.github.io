@@ -219,6 +219,20 @@
       font-size:12px;
       color:#94a3b8;
     }
+    .heroBtns{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+.btn.secondary{
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(148,163,184,.22);
+  box-shadow:none;
+}
+.btn.secondary:hover{
+  box-shadow:0 0 0 6px rgba(255,255,255,.12);
+}
   </style>
 </head>
 
@@ -236,7 +250,10 @@
   <a href="./price.html">料金</a>
   <a href="#trial">体験</a>
 </nav>
-        <a class="btn" href="#trial">無料体験</a>
+        <div class="heroBtns">
+  <a class="btn" href="#trial">無料体験を申し込む</a>
+  <a class="btn secondary" href="./price.html">料金を見る</a>
+</div>
       </div>
     </div>
   </header>
