@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>trr9598-bot | Web制作</title>
+
+  <style>
+    :root{
+      --bg:#f8fbff;
+      --panel:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+
+      --blue-50:#eff6ff;
+      --blue-100:#dbeafe;
+      --blue-500:#3b82f6;
+      --blue-600:#2563eb;
+      --blue-700:#1d4ed8;
+      --ring:rgba(37,99,235,.22);
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% -10%, var(--blue-100), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, var(--blue-50), transparent 55%),
+        var(--bg);
+      min-height:100svh;
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+
+    .card{
+      width:min(920px,94vw);
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:0 18px 50px rgba(2,6,23,.10);
+      padding:32px 28px;
+    }
+
+    header{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      padding-bottom:10px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:18px;
+    }
+
+    header .brand{
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(28px,5vw,40px);
+      letter-spacing:.01em;
+      line-height:1.1;
+    }
+
+    .sub{
+      margin:0;
+      color:#64748b;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    header nav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:700;
+      margin-right:12px;
+      font-size:14px;
+    }
+    header nav a:last-child{ margin-right:0; }
+    header nav a:hover{ color:var(--blue-700); }
+
+    h2{
+      margin:26px 0 12px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:8px;
+      font-size:20px;
+    }
+
+    .lead{
+      font-size:16px;
+      line-height:1.85;
+      color:var(--muted);
+      margin:0;
+    }
+
+    .row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+
+    .btn{
+      display:inline-block;
+      padding:12px 16px;
+      border-radius:12px;
+      text-decoration:none;
+      background:linear-gradient(135deg,var(--blue-600),var(--blue-500));
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 10px 20px rgba(37,99,235,.18);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 14px 26px rgba(37,99,235,.22);
+    }
+
+    .btn.secondary{
+      background:#fff;
+      color:var(--blue-700);
+      border:1px solid var(--blue-100);
+      box-shadow:none;
+    }
+    .btn.secondary:hover{
+      transform:none;
+      box-shadow:0 0 0 4px var(--ring);
+    }
+
+    .hero{
+      background:linear-gradient(135deg,#ffffff, var(--blue-50));
+      border:1px solid var(--blue-100);
+      border-radius:16px;
+      padding:22px;
+      margin-top:8px;
+    }
+
+    .grid{ display:grid; gap:20px; }
+
+    .grid.works{ grid-template-columns:repeat(2,1fr); }
+    @media(max-width:880px){
+      .grid.works{ grid-template-columns:1fr; }
+    }
+
+    .work{
+      display:flex;
+      flex-direction:column;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      transition:transform .15s ease, box-shadow .15s ease;
+      min-height:220px;
+    }
+    .work:hover{
+      box-shadow:0 12px 30px rgba(2,6,23,.08);
+      transform:translateY(-2px);
+    }
+
+    .title{
+      font-weight:900;
+      margin:0 0 8px;
+      font-size:16px;
+    }
+
+    .meta{ margin:0 0 10px; }
+
+    .badge{
+      display:inline-block;
+      font-size:12px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:var(--blue-50);
+      color:var(--blue-700);
+      border:1px solid var(--blue-100);
+      margin-right:6px;
+    }
+
+    .work ul{
+      margin:0 0 12px;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .work .actions{ margin-top:auto; }
+
+    a.small{
+      display:inline-block;
+      font-size:13px;
+      padding:8px 12px;
+      border-radius:10px;
+      text-decoration:none;
+      background:var(--blue-600);
+      color:#fff;
+      font-weight:800;
+    }
+    a.small:hover{ box-shadow:0 0 0 4px var(--ring); }
+
+    .ver{ margin:0 0 12px; color:#94a3b8; font-size:12px; }
+
+    footer{
+      margin-top:18px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+      color:#94a3b8;
+      font-size:12px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+<h1 style="color:red; font-size:48px;">
+  今このHTMLを読んでいます
+</h1>
+  <main class="card" role="main">
+
+    <header>
+      <div class="brand">
+        <h1>trr9598-bot</h1>
+        <p class="sub">Web制作 / LP・コーポレート・WP</p>
+      </div>
+      <nav aria-label="ページ内リンク">
+        <a href="#about">自己紹介</a>
+        <a href="#services">サービス</a>
+        <a href="#works">制作例</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </header>
+
+    <section id="about" class="hero">
+      <h2>自己紹介</h2>
+      <p class="lead">
+        航海士 × Web制作者。<br />
+        LP・コーポレートサイト・WordPressの制作／改修を、わかりやすい設計でお手伝いします。
+      </p>
+      <div class="row">
+        <a class="btn" href="#contact">まずは相談してみる</a>
+        <a class="btn secondary" href="#works">制作例を見る</a>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>サービス</h2>
+      <ul class="lead">
+        <li>LP制作：成果を意識した導線設計とスピード制作</li>
+        <li>コーポレートサイト：信頼感を伝える構成とデザイン</li>
+        <li>WordPress導入・改修：運用しやすさ重視（WP化／調整／表示速度改善）</li>
+      </ul>
+    </section>
+
+    <section id="works">
+      <h2>制作例</h2>
+      <p class="ver">v1 / ジム＋物流（2枚固定）</p>
+
+      <div class="grid works">
+
+        <div class="work">
+          <p class="title">スポーツジム LP（架空）</p>
+          <div class="meta">
+            <span class="badge">LP</span>
+            <span class="badge">スピード納品</span>
+            <span class="badge">レスポンシブ</span>
+          </div>
+          <ul>
+            <li>ヒアリング〜公開まで7日 / CV導線・計測を意識</li>
+          </ul>
+          <div class="actions">
+            <a class="small" href="works/gym-demo/" target="_blank" rel="noopener">デモを見る</a>
+          </div>
+        </div>
+
+        <div class="work">
+          <p class="title">物流会社 コーポレート（架空）</p>
+          <div class="meta">
+            <span class="badge">会社サイト</span>
+            <span class="badge">2ページ</span>
+            <span class="badge">SEO基礎</span>
+          </div>
+          <ul>
+            <li>会社紹介・サービス・問い合わせ導線を最短構築</li>
+          </ul>
+          <div class="actions">
+            <a class="small" href="works/corp-logi/" target="_blank" rel="noopener">デモを見る</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>お問い合わせ</h2>
+      <div class="row">
+        <a class="btn" href="mailto:trr9598@gmail.com">仕事の相談をする</a>
+        <a class="btn secondary" href="https://github.com/trr9598-bot" target="_blank" rel="noopener">GitHubを見る</a>
+      </div>
+    </section>
+
+    <footer>© <span id="y"></span> trr9598-bot</footer>
+
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

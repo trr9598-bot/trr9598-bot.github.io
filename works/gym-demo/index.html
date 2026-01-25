@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>料金｜週1回から始めるパーソナルジム</title>
-  <meta name="description" content="週1回から始められるパーソナル。入会費の不安を解消。料金プラン・無料体験・よくある質問をまとめました。">
+  <title>週1回から始めるパーソナルジム｜無料体験</title>
+  <meta name="description" content="週1回から始める、続けられるパーソナルトレーニング。完全マンツーマン・夜22時まで対応。無料体験受付中。">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
       --bg:#020617;
       --panel:#0b1220;
       --text:#f9fafb;
-      --muted:#cbd5f5;
+      --muted:#cbd5e1;
       --line:rgba(148,163,184,.2);
 
       --b500:#3b82f6;
@@ -38,8 +38,13 @@
     }
     a{ color:inherit; }
 
-    .wrap{ width:min(1100px,92vw); margin:0 auto; padding:26px 0 90px; }
+    .wrap{
+      width:min(1100px,92vw);
+      margin:0 auto;
+      padding:26px 0 90px;
+    }
 
+    /* ===== Header ===== */
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px) saturate(140%);
@@ -56,10 +61,18 @@
       flex-wrap:wrap;
       padding:14px 0;
     }
-
-    .brand strong{ font-size:16px; letter-spacing:.08em; font-weight:900; }
-    .brand span{ display:block; font-size:12px; color:#94a3b8; font-weight:700; margin-top:2px; }
-
+    .brand strong{
+      font-size:16px;
+      letter-spacing:.08em;
+      font-weight:900;
+    }
+    .brand span{
+      display:block;
+      font-size:12px;
+      color:#94a3b8;
+      font-weight:700;
+      margin-top:2px;
+    }
     nav a{
       margin-left:16px;
       text-decoration:none;
@@ -81,6 +94,8 @@
         0 0 0 0 rgba(59,130,246,.6),
         0 18px 40px rgba(37,99,235,.45);
       white-space:nowrap;
+      border:0;
+      cursor:pointer;
     }
     .btn:hover{
       box-shadow:
@@ -88,7 +103,7 @@
         0 26px 70px rgba(37,99,235,.7);
     }
     .btn.secondary{
-      background:rgba(255,255,255,.08);
+      background:rgba(255,255,255,.10);
       border:1px solid rgba(148,163,184,.22);
       box-shadow:none;
     }
@@ -96,9 +111,12 @@
       box-shadow:0 0 0 6px rgba(255,255,255,.12);
     }
 
-    /* HERO */
+    /* ===== Hero ===== */
     .hero{
       margin-top:22px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:26px;
       background:
         radial-gradient(900px 520px at 10% 0%, rgba(59,130,246,.25), transparent 55%),
         radial-gradient(700px 520px at 90% 20%, rgba(37,99,235,.18), transparent 55%),
@@ -107,18 +125,24 @@
       border-radius:24px;
       padding:34px;
       box-shadow:var(--shadow);
+      overflow:hidden;
     }
+    @media(max-width:900px){
+      .hero{ grid-template-columns:1fr; }
+    }
+
     .hero h1{
       margin:0 0 10px;
-      font-size:clamp(30px,4.6vw,42px);
-      line-height:1.15;
+      font-size:clamp(30px,4.8vw,48px);
+      line-height:1.12;
       font-weight:900;
+      letter-spacing:.01em;
     }
-    .hero p{ margin:0; color:#e5e7eb; }
+    .hero p{ margin:0 0 14px; color:#e5e7eb; }
 
     .pill{
       display:inline-block;
-      margin-top:14px;
+      margin-top:10px;
       margin-right:8px;
       margin-bottom:8px;
       padding:6px 12px;
@@ -130,6 +154,36 @@
       font-weight:900;
     }
 
+    .heroBtns{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .heroMedia{
+      position:relative;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 28px 70px rgba(0,0,0,.65);
+      min-height:320px;
+    }
+    .heroMedia img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter:brightness(1.1) contrast(1.08);
+    }
+    .heroMedia::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.20),rgba(0,0,0,.55));
+      pointer-events:none;
+    }
+
+    /* ===== Section ===== */
     section{ margin-top:70px; }
     h2{ margin:0 0 14px; font-size:24px; font-weight:900; }
     .sub{ margin:0 0 20px; color:#cbd5e1; }
@@ -150,68 +204,85 @@
       padding:20px;
       box-shadow:0 14px 40px rgba(0,0,0,.45);
     }
-    .card h3{
-      margin:0 0 10px;
-      font-size:16px;
-      font-weight:900;
-    }
-    .price{
-      font-size:32px;
-      font-weight:900;
-      margin:6px 0 8px;
-      letter-spacing:.01em;
-    }
-    .muted{ color:#cbd5e1; margin:0; }
-    .list{
-      margin:12px 0 0;
-      padding-left:18px;
-      color:#cbd5e1;
-      line-height:1.85;
-    }
-    .tag{
-      display:inline-block;
-      font-size:12px;
-      font-weight:900;
-      padding:5px 10px;
-      border-radius:999px;
-      background:rgba(59,130,246,.15);
-      border:1px solid rgba(59,130,246,.35);
-      color:#bfdbfe;
+    .card strong{
+      display:block;
       margin-bottom:10px;
-    }
-
-    .highlight{
-      border:1px solid rgba(59,130,246,.35);
-      box-shadow:0 0 0 6px rgba(59,130,246,.08), 0 14px 40px rgba(0,0,0,.45);
-    }
-
-    /* FAQ */
-    details{
-      background:rgba(11,18,32,.92);
-      border:1px solid rgba(148,163,184,.16);
-      border-radius:16px;
-      padding:14px 16px;
-      box-shadow:0 14px 40px rgba(0,0,0,.35);
-      margin-bottom:12px;
-    }
-    summary{
-      cursor:pointer;
+      font-size:15px;
       font-weight:900;
-      list-style:none;
     }
-    summary::-webkit-details-marker{ display:none; }
-    details p{ margin:10px 0 0; color:#cbd5e1; }
+    .card p{ margin:0; color:#cbd5e1; line-height:1.85; }
 
-    /* CTA */
+    /* ===== Trial Form ===== */
     .cta{
       margin-top:80px;
       padding:42px;
-      text-align:center;
       background:linear-gradient(135deg,var(--b700),var(--b600));
       border-radius:26px;
       box-shadow:0 30px 80px rgba(37,99,235,.65);
     }
-    .cta p{ margin:8px 0 0; opacity:.95; }
+    .cta h2{ margin:0 0 8px; }
+    .cta p{ margin:0; opacity:.95; }
+
+    .trustRow{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      justify-content:flex-start;
+      flex-wrap:wrap;
+    }
+    .trust{
+      font-size:12px;
+      font-weight:900;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.22);
+      color:#fff;
+    }
+
+    .form{
+      display:grid;
+      gap:14px;
+      max-width:560px;
+      margin-top:18px;
+    }
+    .form label{
+      font-size:13px;
+      font-weight:900;
+      margin-bottom:4px;
+      display:block;
+      color:#fff;
+    }
+    .form input,
+    .form select,
+    .form textarea{
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(2,6,23,.35);
+      color:#fff;
+      font:inherit;
+      outline:none;
+    }
+    .form input:focus,
+    .form select:focus,
+    .form textarea:focus{
+      box-shadow:0 0 0 6px rgba(255,255,255,.14);
+      border-color:rgba(255,255,255,.35);
+    }
+    .form textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .form-actions{
+      margin-top:6px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
 
     footer{
       margin-top:60px;
@@ -219,255 +290,188 @@
       font-size:12px;
       color:#94a3b8;
     }
-    .heroBtns{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:10px;
-}
-.btn.secondary{
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(148,163,184,.22);
-  box-shadow:none;
-}
-.btn.secondary:hover{
-  box-shadow:0 0 0 6px rgba(255,255,255,.12);
-}
-.form{
-  display:grid;
-  gap:14px;
-  max-width:520px;
-  margin:20px auto 0;
-}
 
-.form label{
-  font-size:13px;
-  font-weight:800;
-  margin-bottom:4px;
-  display:block;
-}
-
-.form input,
-.form select,
-.form textarea{
-  width:100%;
-  padding:12px;
-  border-radius:12px;
-  border:1px solid rgba(148,163,184,.25);
-  background:#020617;
-  color:#fff;
-  font:inherit;
-}
-
-.form textarea{
-  min-height:120px;
-  resize:vertical;
-}
-
-.form-actions{
-  margin-top:10px;
-  text-align:center;
-}
+    /* small helper */
+    .note{
+      color:rgba(255,255,255,.85);
+      font-size:12px;
+      margin:0;
+      font-weight:700;
+    }
   </style>
 </head>
-
-<script>
-  const btn = document.getElementById("sendBtn");
-
-  btn.addEventListener("click", function(){
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const time = document.getElementById("time").value;
-    const message = document.getElementById("message").value;
-
-    const body = `
-【名前】${name}
-【メール】${email}
-【希望時間】${time}
-
-【相談内容】
-${message}
-    `;
-
-    const mailto =
-      "mailto:trr9598@gmail.com" +
-      "?subject=" + encodeURIComponent("無料体験の申込み") +
-      "&body=" + encodeURIComponent(body);
-
-    window.location.href = mailto;
-  });
-</script>
 
 <body>
   <header>
     <div class="inner">
       <div class="brand">
         <strong>GYM DEMO</strong>
-        <span>料金・プラン</span>
+        <span>週1回から始めるパーソナル</span>
       </div>
+
       <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-      <nav>
-  <a href="./index.html#features">特徴</a>
-  <a href="./index.html#menu">内容</a>
-  <a href="./price.html">料金</a>
-  <a href="#trial">体験</a>
-</nav>
-        <div class="heroBtns">
-  <a class="btn" href="#trial">無料体験を申し込む</a>
-  <a class="btn secondary" href="./price.html">料金を見る</a>
-</div>
+        <nav>
+          <a href="#features">特徴</a>
+          <a href="#menu">内容</a>
+          <a href="./price.html">料金</a>
+          <a href="#trial">体験</a>
+        </nav>
+        <a class="btn" href="#trial">無料体験</a>
       </div>
     </div>
   </header>
 
   <main class="wrap">
 
-    <section class="hero" aria-label="料金のヒーロー">
-      <h1>料金はシンプル。<br>続けやすさを最優先に。</h1>
-      <p>一番の不安になりやすい「入会費」と「続けられるか」を、ここでちゃんと解消する。</p>
-      <span class="pill">週1回からOK</span>
-      <span class="pill">夜22時まで</span>
-      <span class="pill">完全マンツーマン</span>
+    <!-- HERO -->
+    <section class="hero" aria-label="ヒーロー">
+      <div>
+        <h1>
+          忙しくても続く。<br>
+          夜22時まで通える<br>
+          完全マンツーマンのパーソナルトレーニング
+        </h1>
+
+        <p>
+          部活引退後の運動不足、社会人の体力低下に。<br>
+          週1回・60分から始められるから、無理なく続く。
+        </p>
+
+        <span class="pill">完全マンツーマン</span>
+        <span class="pill">夜22時まで</span>
+        <span class="pill">週1回OK</span>
+
+        <div class="heroBtns">
+          <a class="btn" href="#trial">無料体験を申し込む</a>
+          <a class="btn secondary" href="./price.html">料金を見る</a>
+        </div>
+      </div>
+
+      <div class="heroMedia">
+        <img src="gym.jpg" alt="パーソナルトレーニングの様子">
+      </div>
     </section>
 
-    <section aria-label="料金プラン">
-      <h2>料金プラン（デモ）</h2>
-      <p class="sub">※価格はサンプル。あとで数字だけ差し替えればOK。</p>
+    <!-- FEATURES -->
+    <section id="features" aria-label="特徴">
+      <h2>続けられる理由</h2>
+      <p class="sub">無理をさせないから、自然と習慣になる。</p>
 
       <div class="grid">
         <div class="card">
-          <div class="tag">ライト</div>
-          <h3>週1回プラン</h3>
-          <div class="price">¥10,000<span style="font-size:14px; font-weight:800; color:#cbd5e1;"> / 回</span></div>
-          <p class="muted">「まず習慣化したい」人向け</p>
-          <ul class="list">
-            <li>60分 / 回（目安）</li>
-            <li>フォーム習得・体力づくり</li>
-            <li>無理なく続ける設計</li>
-          </ul>
+          <strong>完全マンツーマン</strong>
+          <p>他人を気にせず、あなた専用のメニューで進める。</p>
         </div>
-
-        <div class="card highlight">
-          <div class="tag">人気</div>
-          <h3>週2回プラン</h3>
-          <div class="price">¥18,000<span style="font-size:14px; font-weight:800; color:#cbd5e1;"> / 回</span></div>
-          <p class="muted">「見た目も体力も変えたい」人向け</p>
-          <ul class="list">
-            <li>60分 / 回（目安）</li>
-            <li>引き締め・体力UP・姿勢改善</li>
-            <li>最短で成果を出すバランス</li>
-          </ul>
-        </div>
-
         <div class="card">
-          <div class="tag">集中</div>
-          <h3>短期集中プラン</h3>
-          <div class="price">¥25,000<span style="font-size:14px; font-weight:800; color:#cbd5e1;"> / 回</span></div>
-          <p class="muted">「期限までに変えたい」人向け</p>
-          <ul class="list">
-            <li>食事の基本アドバイス（想定）</li>
-            <li>目標から逆算して設計</li>
-            <li>忙しい人でも回る導線</li>
-          </ul>
+          <strong>夜22時まで対応</strong>
+          <p>仕事・学校終わりでも通える。継続のハードルが下がる。</p>
+        </div>
+        <div class="card">
+          <strong>週1回からOK</strong>
+          <p>最初から頑張らせない。続けられる頻度が一番強い。</p>
         </div>
       </div>
     </section>
 
-    <section aria-label="入会費の不安を潰す">
-      <h2>入会費が不安な人へ</h2>
-      <p class="sub">ここが一番の離脱ポイント。だから、先に潰す。</p>
+    <!-- MENU -->
+    <section id="menu" aria-label="内容">
+      <h2>トレーニング内容</h2>
+      <p class="sub">初心者でも安心できる内容で、ちゃんと成果に繋げる。</p>
 
       <div class="grid">
         <div class="card">
-          <h3>入会費（デモ）</h3>
-          <p class="muted" style="margin:0 0 8px;">入会費：<strong style="color:#fff;">¥10,000</strong>（サンプル）</p>
-          <ul class="list">
-            <li>無料体験の後に判断でOK</li>
-            <li>無理な勧誘はしない設計</li>
-            <li>続けられそうなら入会、でいい</li>
-          </ul>
+          <strong>目的別プログラム</strong>
+          <p>運動不足解消・体力づくり・引き締め。目的から逆算して設計。</p>
         </div>
-
         <div class="card">
-          <h3>続けられるか不安な人へ</h3>
-          <ul class="list">
-            <li>週1回でも成果が出るように設計</li>
-            <li>最初は「頑張らせない」</li>
-            <li>忙しい前提で現実的に組む</li>
-          </ul>
+          <strong>無理のない負荷</strong>
+          <p>ケガを防ぎながら、着実にレベルアップできる負荷で進める。</p>
         </div>
-
         <div class="card">
-          <h3>夜22時まで</h3>
-          <ul class="list">
-            <li>仕事終わりでも通える</li>
-            <li>予定が詰まってても崩れにくい</li>
-            <li>継続できる導線が強み</li>
-          </ul>
+          <strong>フォーム重視</strong>
+          <p>正しい動きで効率よく。最短で結果が出やすい。</p>
         </div>
       </div>
     </section>
 
-    <section aria-label="FAQ">
-      <h2>よくある質問</h2>
-      <p class="sub">申し込み前の不安をここで解消。</p>
+    <!-- TRIAL -->
+    <section class="cta" id="trial" aria-label="無料体験">
+      <h2>無料体験で「続けられるか」だけ確認しよう</h2>
+      <p>週1回・60分から。無理な勧誘なし。合うかどうかだけ見て帰ってOK。</p>
 
-      <details>
-        <summary>Q. 体験後に入会を断っても大丈夫？</summary>
-        <p>A. 大丈夫。体験で合うかどうかを確認してから決めてOK。</p>
-      </details>
+      <div class="trustRow">
+        <span class="trust">✅ 体験だけでもOK</span>
+        <span class="trust">✅ その場で入会しなくてOK</span>
+        <span class="trust">✅ 夜22時まで対応</span>
+      </div>
 
-      <details>
-        <summary>Q. 運動経験ゼロでも平気？</summary>
-        <p>A. 平気。フォーム優先で、ケガしない負荷からスタートする設計。</p>
-      </details>
+      <form class="form" aria-label="体験申し込みフォーム（デモ）">
+        <div>
+          <label for="name">お名前</label>
+          <input type="text" id="name" placeholder="例）山田 太郎">
+        </div>
 
-      <details>
-        <summary>Q. 週1回でも意味ある？</summary>
-        <p>A. 意味ある。継続できる頻度が一番強い。週1でも成果が出る設計にする。</p>
-      </details>
+        <div>
+          <label for="email">メールアドレス</label>
+          <input type="email" id="email" placeholder="例）example@gmail.com">
+        </div>
+
+        <div>
+          <label for="time">ご希望の時間帯</label>
+          <select id="time">
+            <option>平日 夜</option>
+            <option>土日</option>
+            <option>どちらでも</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message">不安・相談したいこと</label>
+          <textarea id="message" placeholder="続けられるか不安、料金について聞きたい等"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <a class="btn" id="sendBtn" href="javascript:void(0)">この内容で送信</a>
+          <p class="note">※ 送信はメールアプリ（mailto）で開くデモ</p>
+        </div>
+      </form>
     </section>
-
-    <section class="cta" id="trial">
-  <h2>無料体験のお申し込み</h2>
-  <p>まずは気軽にご相談ください。無理な勧誘はありません。</p>
-
-  <form class="form">
-    <div>
-      <label>お名前</label>
-      <input type="text" id="name" placeholder="例）山田 太郎">
-    </div>
-
-    <div>
-      <label>メールアドレス</label>
-      <input type="email" id="email" placeholder="例）example@gmail.com">
-    </div>
-
-    <div>
-      <label>ご希望の時間帯</label>
-      <select id="time">
-        <option>平日 夜</option>
-        <option>土日</option>
-        <option>どちらでも</option>
-      </select>
-    </div>
-
-    <div>
-      <label>不安・相談したいこと</label>
-      <textarea id="message" placeholder="続けられるか不安、料金について聞きたい等"></textarea>
-    </div>
-
-    <div class="form-actions">
-      <a class="btn" id="sendBtn" href="#">この内容で送信</a>
-    </div>
-  </form>
-</section>
 
     <footer>© <span id="y"></span> GYM DEMO</footer>
   </main>
 
   <script>
+    // 年号
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // フォーム → mailto → thanks遷移
+    const btn = document.getElementById("sendBtn");
+
+    btn.addEventListener("click", function(){
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const time = document.getElementById("time").value;
+      const message = document.getElementById("message").value.trim();
+
+      const body =
+`【名前】${name || "-"}
+【メール】${email || "-"}
+【希望時間】${time || "-"}
+
+【不安・相談内容】
+${message || "-"}`;
+
+      const mailto =
+        "mailto:trr9598@gmail.com" +
+        "?subject=" + encodeURIComponent("無料体験の申込み（ジムLP）") +
+        "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailto;
+
+      setTimeout(() => {
+        window.location.href = "./thanks.html";
+      }, 300);
+    });
   </script>
 </body>
 </html>
