@@ -233,8 +233,70 @@
 .btn.secondary:hover{
   box-shadow:0 0 0 6px rgba(255,255,255,.12);
 }
+.form{
+  display:grid;
+  gap:14px;
+  max-width:520px;
+  margin:20px auto 0;
+}
+
+.form label{
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:4px;
+  display:block;
+}
+
+.form input,
+.form select,
+.form textarea{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid rgba(148,163,184,.25);
+  background:#020617;
+  color:#fff;
+  font:inherit;
+}
+
+.form textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.form-actions{
+  margin-top:10px;
+  text-align:center;
+}
   </style>
 </head>
+
+<script>
+  const btn = document.getElementById("sendBtn");
+
+  btn.addEventListener("click", function(){
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const time = document.getElementById("time").value;
+    const message = document.getElementById("message").value;
+
+    const body = `
+【名前】${name}
+【メール】${email}
+【希望時間】${time}
+
+【相談内容】
+${message}
+    `;
+
+    const mailto =
+      "mailto:trr9598@gmail.com" +
+      "?subject=" + encodeURIComponent("無料体験の申込み") +
+      "&body=" + encodeURIComponent(body);
+
+    window.location.href = mailto;
+  });
+</script>
 
 <body>
   <header>
@@ -366,14 +428,40 @@
       </details>
     </section>
 
-    <section class="cta" id="trial" aria-label="体験CTA">
-      <h2>無料体験で、まず1回だけ試す</h2>
-      <p>不安がある人ほど、体験してから決めるのが正解。</p>
-      <div style="margin-top:14px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-        <a class="btn" href="mailto:trr9598@gmail.com?subject=無料体験の申込み（料金ページ）">無料体験を申し込む</a>
-        <a class="btn secondary" href="./index.html">LPに戻る</a>
-      </div>
-    </section>
+    <section class="cta" id="trial">
+  <h2>無料体験のお申し込み</h2>
+  <p>まずは気軽にご相談ください。無理な勧誘はありません。</p>
+
+  <form class="form">
+    <div>
+      <label>お名前</label>
+      <input type="text" id="name" placeholder="例）山田 太郎">
+    </div>
+
+    <div>
+      <label>メールアドレス</label>
+      <input type="email" id="email" placeholder="例）example@gmail.com">
+    </div>
+
+    <div>
+      <label>ご希望の時間帯</label>
+      <select id="time">
+        <option>平日 夜</option>
+        <option>土日</option>
+        <option>どちらでも</option>
+      </select>
+    </div>
+
+    <div>
+      <label>不安・相談したいこと</label>
+      <textarea id="message" placeholder="続けられるか不安、料金について聞きたい等"></textarea>
+    </div>
+
+    <div class="form-actions">
+      <a class="btn" id="sendBtn" href="#">この内容で送信</a>
+    </div>
+  </form>
+</section>
 
     <footer>© <span id="y"></span> GYM DEMO</footer>
   </main>
