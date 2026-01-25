@@ -43,11 +43,21 @@
       padding:32px 0 90px;
     }
 
+    /* HEADER */
     header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(10px) saturate(140%);
+      background: rgba(2,6,23,.55);
+      border-bottom:1px solid rgba(148,163,184,.18);
+      padding:14px 0;
+      margin-bottom:26px;
+    }
+    header .inner{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      margin-bottom:26px;
     }
     header strong{
       font-size:16px;
@@ -74,7 +84,11 @@
       display:grid;
       grid-template-columns:1.2fr .8fr;
       gap:32px;
-      background:linear-gradient(135deg,#020617,#020617);
+      background:
+        radial-gradient(900px 520px at 10% 0%, rgba(59,130,246,.25), transparent 55%),
+        radial-gradient(700px 520px at 90% 20%, rgba(37,99,235,.18), transparent 55%),
+        linear-gradient(180deg,#020617,#020617);
+      border:1px solid rgba(148,163,184,.18);
       border-radius:var(--radius);
       padding:40px;
       box-shadow:var(--shadow);
@@ -136,7 +150,8 @@
       height:100%;
       object-fit:cover;
       display:block;
-      filter:brightness(1.15) contrast(1.1);
+      transform:scale(1.03);
+      filter:brightness(1.05) contrast(1.12) saturate(1.08);
     }
     .heroMedia::after{
       content:"";
@@ -167,10 +182,11 @@
     }
 
     .box{
-      background:var(--panel);
+      background:rgba(11,18,32,.92);
+      border:1px solid rgba(148,163,184,.16);
       border-radius:16px;
       padding:24px;
-      box-shadow:0 18px 45px rgba(0,0,0,.6);
+      box-shadow:0 14px 40px rgba(0,0,0,.45);
     }
     .box strong{
       display:block;
@@ -201,9 +217,8 @@
 </head>
 
 <body>
-  <div class="wrap">
-
-    <header>
+  <header>
+    <div class="wrap inner">
       <div>
         <strong>GYM DEMO</strong>
         <span>週1回から始めるパーソナル</span>
@@ -213,22 +228,28 @@
         <a href="#menu">内容</a>
         <a href="#trial">体験</a>
       </nav>
-    </header>
+    </div>
+  </header>
+
+  <main class="wrap">
 
     <!-- HERO -->
     <section class="hero">
       <div>
-        <h1>週1回から始める<br>続けられるパーソナルトレーニング</h1>
+        <h1>
+          忙しくても続く。<br>
+          夜22時まで通える<br>
+          完全マンツーマンのパーソナルトレーニング
+        </h1>
         <p>
-          運動したいけど続かなかった人へ。<br>
-          完全マンツーマン × 夜22時まで対応。
+          部活引退後の運動不足、社会人の体力低下に。<br>
+          週1回・60分から始められるから、無理なく続きます。
         </p>
 
         <span class="pill">完全マンツーマン</span>
         <span class="pill">夜22時まで</span>
-        <span class="pill">週1回OK</span>
+        <span class="pill">週1回OK</span><br>
 
-        <br>
         <a class="btn" href="#trial">無料体験を申し込む</a>
       </div>
 
@@ -280,7 +301,7 @@
     <!-- CTA -->
     <section class="cta" id="trial">
       <h2>まずは無料体験から</h2>
-      <p>無理な勧誘はありません。気軽にご相談ください。</p>
+      <p>入会は体験後でOK。続けられるか不安な人ほど、まず1回試してみて。</p>
       <a class="btn" href="mailto:trr9598@gmail.com?subject=無料体験の申込み">無料体験を申し込む</a>
     </section>
 
@@ -288,7 +309,7 @@
       © <span id="y"></span> GYM DEMO
     </footer>
 
-  </div>
+  </main>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
