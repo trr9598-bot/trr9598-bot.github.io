@@ -133,6 +133,40 @@
       position:relative;
       z-index:1;
     }
+    /* ===== Hero typography fix ===== */
+.hero h1{
+  text-wrap:balance;              /* 対応ブラウザでは自動で行分割が綺麗になる */
+}
+
+.hero .eyebrow{
+  display:inline-block;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.06em;
+  color:#93c5fd;
+  background:rgba(37,99,235,.14);
+  border:1px solid rgba(147,197,253,.25);
+  padding:6px 10px;
+  border-radius:999px;
+  margin:0 0 12px;
+}
+
+.hero .headline{
+  margin:0 0 12px;
+  line-height:1.08;
+}
+
+.hero .headline .line{
+  display:block;                  /* 1行ずつ綺麗に制御 */
+}
+
+.hero .lead{
+  margin:0;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.75;
+  max-width:36em;                 /* 行が長すぎてダサくなるの防止 */
+}
     .hero p{
       margin:0 0 16px;
       color:var(--muted);
@@ -398,18 +432,18 @@
     <!-- HERO -->
    <section class="hero" id="top">
   <div>
-  <p class="kicker">中小企業・EC事業者向け</p>
+  <p class="eyebrow">中小企業・EC事業者向け</p>
 
-  <h1>
-    配送・保管・流通加工を<br>
-    まとめて任せられる<br>
-    物流パートナー
-  </h1>
+<h1 class="headline">
+  <span class="line">配送・保管・流通加工を</span>
+  <span class="line">まとめて任せられる</span>
+  <span class="line">物流パートナー</span>
+</h1>
 
   <p class="lead">
-    出荷量の増加、倉庫不足、急なスポット対応。<br>
-    “今の運用を崩さず”現場が回る形に整理します。
-  </p>
+  出荷量の増加、倉庫不足、急なスポット対応。<br>
+  現場が回らない悩みを、今の運用を崩さず整理します。
+</p>
 
   <div style="margin-top:14px;">
     <a class="btn" href="#contact">まずは無料で相談する</a>
