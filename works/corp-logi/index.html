@@ -167,6 +167,19 @@
   line-height:1.75;
   max-width:36em;                 /* 行が長すぎてダサくなるの防止 */
 }
+/* ===== Hero headline more pro ===== */
+.hero .headline{
+  font-size:clamp(30px, 4.2vw, 46px);
+  letter-spacing:-0.01em;
+}
+
+.hero .headline .line{
+  line-height:1.06;
+}
+
+@media(max-width:900px){
+  .hero .lead{ font-size:15px; }
+}
     .hero p{
       margin:0 0 16px;
       color:var(--muted);
